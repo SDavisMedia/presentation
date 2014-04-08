@@ -69,6 +69,8 @@ q:before, q:after {
 	content: "";
 }
 blockquote, q {
+	color: #8F9EB8;
+	font-style: italic;
 	quotes: "" "";
 }
 a img {
@@ -84,11 +86,11 @@ Structure
 .main {
 	margin: 0 auto;
 	width: 100%;
-	max-width: 1100px;
+	max-width: 1040px;
 }
 .inner {
 	position: relative;
-	padding: 30px 0;
+	padding: 32px 0;
 }
 #primary {
 	float: left;
@@ -113,7 +115,8 @@ textarea {
 	font-size: 16px;
 	line-height: 1.5em;
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+.site-title {
 	clear: both;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 	font-weight: 300;
@@ -148,17 +151,19 @@ address {
 	margin: 0 0 1.5em;
 }
 pre {
-	background: #eee;
+	background: #F2F3F5;
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 13px;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;
-	padding: 1.6em;
+	padding: 16px;
+	border-radius: 3px;
 }
 code, kbd, tt, var {
-	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font: 16px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	color: #8F9EB8;
 }
 abbr, acronym {
 	border-bottom: 1px dotted #666;
@@ -216,7 +221,10 @@ dt {
 	font-weight: bold;
 }
 dd {
-	margin: 0 1.5em 1.5em;
+	margin: 1.5em;
+	border-left: 3px solid #F2F3F5;
+	padding-left: 16px;
+	padding: 0 0 0 16px;
 }
 figure {
 	margin: 0;
@@ -236,10 +244,26 @@ button,
 input,
 select,
 textarea {
-	border: 1px solid #ccc;
 	margin: 0;
 	vertical-align: baseline;
 	*vertical-align: middle;
+}
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+	border: 2px solid #E1E6F0;
+	padding: 8px;
+}
+#secondary .widget input[type="text"],
+#secondary .widget input[type="email"],
+#secondary .widget input[type="url"],
+#secondary .widget input[type="password"],
+#secondary .widget input[type="search"] {
+	display: block;
+	width: 100%;
 }
 textarea {
 	overflow: auto;
@@ -247,10 +271,23 @@ textarea {
 	vertical-align: top;
 	width: 100%;
 }
+input[type="submit"],
+input[type="button"] {
+	background: #2980B9;
+	color: #fff;
+	padding: 8px;
+	border: none;
+	cursor: pointer;
+}
+input[type="submit"]:hover,
+input[type="button"]:hover {
+	background: #404040;
+}
 
 /*--------------------------------------------------------------
 Navigation
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 Links
 --------------------------------------------------------------*/
@@ -268,40 +305,72 @@ Menus
 .main-navigation {
 	clear: both;
 	display: block;
-	float: left;
+	background: #2980B9;
+	color: #fff;
+	padding-left: 12px;
+	border-radius: 3px;
+	margin-bottom: 32px;
 	width: 100%;
 }
-.main-navigation ul {
+.header-menu {
+	position: absolute;
+		right: 0;
+		top: 32px;
+}
+.main-navigation ul,
+.header-menu ul {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
 }
-.main-navigation li {
+.main-navigation li,
+.header-menu li {
 	float: left;
 	position: relative;
 }
+.header-menu li:not(:last-child) {
+	padding-right: 24px;
+}
 .main-navigation a {
 	display: block;
+	color: #fff;
 	text-decoration: none;
+	padding: 12px;
+}
+.main-navigation ul ul li:last-child a:hover {
+	border-radius: 0 0 3px 3px;
+}
+.header-menu a {
+	color: #8F9EB8;
+	font-size: 13px;
+}
+.main-navigation a:hover {
+	background: #3498DB;
+}
+.header-menu a:hover {
+	color: #3498DB;
 }
 .skip-link.screen-reader-text {
 	padding: 0;
 }
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	display: none;
 	float: left;
 	left: 0;
 	position: absolute;
-	top: 1.5em;
+		top: 48px;
 	z-index: 99999;
+	border-radius: 0 0 3px 3px;
+}
+.header-menu ul ul {
+	display: none;
 }
 .main-navigation ul ul ul {
 	left: 100%;
 	top: 0;
 }
 .main-navigation ul ul a {
-	width: 200px;
+	width: 260px;
 }
 .main-navigation ul ul li {
 }
@@ -313,6 +382,7 @@ Menus
 }
 .main-navigation ul li:hover > ul {
 	display: block;
+	background: #2980B9;
 }
 .main-navigation .current_page_item a,
 .main-navigation .current-menu-item a {
@@ -321,6 +391,7 @@ Menus
 .menu-toggle {
 	cursor: pointer;
 	display: none;
+	padding: 12px;
 }
 .site-main .comment-navigation,
 .site-main .paging-navigation,
@@ -423,6 +494,78 @@ Clearings
 }
 
 /*--------------------------------------------------------------
+Header
+--------------------------------------------------------------*/
+.site-header {
+	padding: 0;
+}
+.header-elements {
+	padding: 32px 0;
+}
+.site-title a {
+	color: #404040;
+	font-size: 26px;
+	font-weight: 300;
+}
+
+/*--------------------------------------------------------------
+Content
+--------------------------------------------------------------*/
+.site-content {
+	padding-top: 0;
+}
+.page-title {
+	color: #8F9EB8;
+	font-size: 22px;
+}
+
+/*--------------------------------------------------------------
+Singulars
+--------------------------------------------------------------*/
+.sticky {
+}
+.hentry {
+	margin: 0 0 1.5em;
+}
+.entry-header {
+	margin-bottom: 2em;
+}
+.byline,
+.updated {
+	display: none;
+}
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+.entry-meta {
+	color: #8F9EB8;
+	padding: 10px 0;
+	border: 1px solid #eee;
+	border-width: 1px 0;
+}
+.featured-img {
+	margin-bottom: 1.5em;
+}
+footer.entry-meta {
+	font-size: 13px;
+	border: none;
+}
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/*--------------------------------------------------------------
+Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+.bypostauthor {
+}
+
+/*--------------------------------------------------------------
 Sidebar
 --------------------------------------------------------------*/
 #secondary aside {
@@ -468,63 +611,23 @@ Sidebar
 }
 
 /*--------------------------------------------------------------
-Content
---------------------------------------------------------------*/
-.page-title {
-	color: #C2CBDB;
-	font-size: 22px;
-}
-
-/*--------------------------------------------------------------
-Posts and pages
---------------------------------------------------------------*/
-.sticky {
-}
-.hentry {
-	margin: 0 0 1.5em;
-}
-.entry-header {
-	margin-bottom: 2em;
-}
-.byline,
-.updated {
-	display: none;
-}
-.single .byline,
-.group-blog .byline {
-	display: inline;
-}
-.entry-meta {
-	color: #C2CBDB;
-	padding: 10px 0;
-	border: 1px solid #eee;
-	border-width: 1px 0;
-}
-footer.entry-meta {
-	font-size: 13px;
-	border: none;
-}
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
-}
-
-/*--------------------------------------------------------------
-Comments
---------------------------------------------------------------*/
-.comment-content a {
-	word-wrap: break-word;
-}
-.bypostauthor {
-}
-
-/*--------------------------------------------------------------
 Easy Digital Downloads
 --------------------------------------------------------------*/
+#secondary .edd_download_purchase_form {
+	background: #2980B9;
+	color: #fff;
+	padding: 32px;
+	border-radius: 3px;
+}
+#secondary .edd_download_purchase_form li:not(:last-child) {
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgba(0,0,0,.05);
+	margin-bottom: 10px;
+}
 .threecol.product {
 	float: left;
 	width: 32.291666666667%;
-	margin: 0 1.5625% 30px 0;
+	margin: 0 1.5625% 32px 0;
 }
 .threecol.product:nth-child(3n+3) {
 	margin-right: 0;
@@ -588,15 +691,21 @@ object {
 /*--------------------------------------------------------------
 Responsive
 --------------------------------------------------------------*/
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1040px) {
 	.inner {
 		padding-right: 20px;
 		padding-left: 20px;
 	}
+	.main-navigation {
+		border-radius: 0;
+	}
+	.header-menu {
+		right: 20px;
+	}
 	.threecol.product {
 		float: left;
 		width: 49%;
-		margin: 0 2% 30px 0;
+		margin: 0 2% 32px 0;
 	}
 	.threecol.product:nth-child(3n+3) {
 		margin-right: 2%;
@@ -629,7 +738,7 @@ Responsive
 	.threecol.product {
 		float: none;
 		width: 100%;
-		margin: 0 0 30px 0;
+		margin: 0 0 32px 0;
 	}
 	.threecol.product:nth-child(3n+3) {
 		margin-right: 0;
