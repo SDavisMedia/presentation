@@ -29,21 +29,17 @@ function sdm_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 */
+	// Enable support for Post Thumbnails on posts and pages
 	add_theme_support( 'post-thumbnails' );
 	
 	// add a hard cropped (for uniformity) image size for the product grid
 	add_image_size( 'product-img', 540, 360, true );
 
-	// This theme uses wp_nav_menu() in one location.
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'sdm' ),
 	) );
 	register_nav_menus( array(
-		'primary' => __( 'Header Menu', 'sdm' ),
 		'header' => __( 'Header Menu (no drop-downs)', 'sdm' ),
 	) );
 
@@ -123,7 +119,6 @@ function sdm_excerpt_more( $more ) {
 	if ( is_page_template( 'edd_templates/edd-store-front.php' ) || is_archive( 'download') ) {
 		return '...';
 	} else {
-		return '...</p> <div class="continue-reading"><a class="more-link" href="' . get_permalink( get_the_ID() ) . '">' . get_theme_mod( 'sdm_read_more', __( 'Read More &rarr;', 'sdm' ) ) . '</a></div>';
 		return '...</p> <div class="continue-reading"><a class="more-link" href="' . get_permalink( get_the_ID() ) . '">' . get_theme_mod( 'sdm_read_more', __( 'Read More', 'sdm' ) . ' &rarr;' ) . '</a></div>';
 	}
 }
