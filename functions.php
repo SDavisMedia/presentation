@@ -38,8 +38,13 @@ function sdm_setup() {
 	add_image_size( 'product-img', 540, 360, true );
 
 	// This theme uses wp_nav_menu() in one location.
+	// This theme uses wp_nav_menu() in two locations.
+	register_nav_menus( array(
+		'primary' => __( 'Primary Menu', 'sdm' ),
+	) );
 	register_nav_menus( array(
 		'primary' => __( 'Header Menu', 'sdm' ),
+		'header' => __( 'Header Menu (no drop-downs)', 'sdm' ),
 	) );
 
 	// Enable support for HTML5 markup.
