@@ -21,16 +21,21 @@ $ping = get_bloginfo('pingback_url');
 
 	<div class="header-area full">
 		<div class="main">
-			<header id="masthead" class="site-header inner" role="banner">
-				<span class="site-title">
-					<?php if ( get_theme_mod( 'sdm_logo' ) ) : ?>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-							<img src="<?php echo get_theme_mod( 'sdm_logo' ); ?>" alt="<?php echo esc_attr( $title ); ?>">
-						</a>
-					<?php else : ?>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( $title ); ?>">
-							<?php echo $title; ?>
-						</a>
+			<header id="masthead" class="site-header inner">
+				<div class="header-elements">
+					<span class="site-title">
+						<?php if ( get_theme_mod( 'sdm_logo' ) ) : ?>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+								<img src="<?php echo get_theme_mod( 'sdm_logo' ); ?>" alt="<?php echo esc_attr( $title ); ?>">
+							</a>
+						<?php else : ?>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( $title ); ?>">
+								<?php echo $title; ?>
+							</a>
+						<?php endif; ?>
+					</span>
+					<?php if ( get_theme_mod( 'sdm_hide_tagline' ) != 1 ) : ?>
+						<h1 class="site-description"><?php echo $tagline; ?></h1>
 					<?php endif; ?>
 				</span>
 				<?php if ( get_theme_mod( 'sdm_hide_tagline' ) != 1 ) : ?>
