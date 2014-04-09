@@ -6,7 +6,7 @@
 /**
  * definitions
  */
-define( 'SDM_NAME', '' );
+define( 'SDM_NAME', 'Presentation' );
 define( 'SDM_VERSION', '1.0' );
 define( 'SDM_HOME', 'https://easydigitaldownloads.com/' );
 
