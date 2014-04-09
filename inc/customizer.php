@@ -124,6 +124,38 @@ function sdm_customize_register( $wp_customize ) {
 		'settings'	=> 'sdm_credits_copyright',
 		'priority'	=> 70,
 	) );
+	// twitter url
+	$wp_customize->add_setting( 'sdm_twitter', array( 'default' => null ) );
+	$wp_customize->add_control( 'sdm_twitter', array(
+		'label'		=> __( 'Twitter Profile URL', 'sdm' ),
+		'section'	=> 'sdm_content_section',
+		'settings'	=> 'sdm_twitter',
+		'priority'	=> 80,
+	) );
+	// facebook url
+	$wp_customize->add_setting( 'sdm_facebook', array( 'default' => null ) );
+	$wp_customize->add_control( 'sdm_facebook', array(
+		'label'		=> __( 'Facebook Profile URL', 'sdm' ),
+		'section'	=> 'sdm_content_section',
+		'settings'	=> 'sdm_facebook',
+		'priority'	=> 90,
+	) );
+	// google plus url
+	$wp_customize->add_setting( 'sdm_gplus', array( 'default' => null ) );
+	$wp_customize->add_control( 'sdm_gplus', array(
+		'label'		=> __( 'Google Plus Profile URL', 'sdm' ),
+		'section'	=> 'sdm_content_section',
+		'settings'	=> 'sdm_gplus',
+		'priority'	=> 100,
+	) );
+	// linkedin url
+	$wp_customize->add_setting( 'sdm_linkedin', array( 'default' => null ) );
+	$wp_customize->add_control( 'sdm_linkedin', array(
+		'label'		=> __( 'LinkedIn Profile URL', 'sdm' ),
+		'section'	=> 'sdm_content_section',
+		'settings'	=> 'sdm_linkedin',
+		'priority'	=> 110,
+	) );
 	
 	
 	/** ===============
