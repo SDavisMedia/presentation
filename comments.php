@@ -31,8 +31,16 @@ if ( post_password_required() ) {
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-above" class="comment-navigation" role="navigation">
 			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'sdm' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'sdm' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'sdm' ) ); ?></div>
+			<div class="nav-previous">
+				<?php 
+				previous_comments_link( '<i class="fa fa-arrow-circle-left"></i>' . __( 'Older Comments', 'sdm' ) ); 
+				?>
+			</div>
+			<div class="nav-next">
+				<?php 
+				next_comments_link( __( 'Newer Comments', 'sdm' ) . '<i class="fa fa-arrow-circle-right"></i>' );
+				?>
+			</div>
 		</nav>
 		<?php endif; // check for comment navigation ?>
 
@@ -49,8 +57,16 @@ if ( post_password_required() ) {
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
 			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'sdm' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'sdm' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'sdm' ) ); ?></div>
+			<div class="nav-previous">
+				<?php 
+				previous_comments_link( '<i class="fa fa-arrow-circle-left"></i>' . __( 'Older Comments', 'sdm' ) ); 
+				?>
+			</div>
+			<div class="nav-next">
+				<?php 
+				next_comments_link( __( 'Newer Comments', 'sdm' ) . '<i class="fa fa-arrow-circle-right"></i>' ); 
+				?>
+			</div>
 		</nav>
 		<?php endif; // check for comment navigation ?>
 
