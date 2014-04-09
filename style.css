@@ -738,6 +738,40 @@ object {
 }
 
 /*--------------------------------------------------------------
+Plugin support
+--------------------------------------------------------------*/
+/* Jetpack */
+.entry-content div.sharedaddy div.sd-block,
+.entry-summary div.sharedaddy div.sd-block {
+	color: #8F9EB8;
+	font-size: 13px;
+	padding: 6px 0 0;
+	border: 1px solid #EEE;
+	border-width: 1px 0 0;
+	margin: 1.5em 0;
+}
+.format-aside .entry-content div.sharedaddy div.sd-block,
+.format-aside .entry-summary div.sharedaddy div.sd-block {
+	border: none;
+	padding: 0;
+}
+#content .entry-content div.sharedaddy h3.sd-title,
+#content .entry-summary div.sharedaddy h3.sd-title {
+	display: block;
+	float: none;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
+	font-weight: normal;
+	margin-bottom: 8px;
+	width: 100%;
+}
+#content .entry-content div.sharedaddy .sd-content,
+#content .entry-summary div.sharedaddy .sd-content {
+	display: block;
+	float: none;
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
 Responsive
 --------------------------------------------------------------*/
 @media screen and (max-width: 1040px) {
