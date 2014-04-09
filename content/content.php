@@ -38,28 +38,4 @@
 			?>
 		</div>
 	<?php endif; ?>
-
-	<footer class="entry-meta">
-		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
-			<?php
-				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', 'sdm' ) );
-				if ( $categories_list && sdm_categorized_blog() ) :
-			?>
-			<span class="cat-links tax-links">
-				<i class="fa fa-archive"></i><?php printf( __( '%1$s', 'sdm' ), $categories_list ); ?>
-			</span><br>
-			<?php endif; // End if categories ?>
-
-			<?php
-				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', __( ', ', 'sdm' ) );
-				if ( $tags_list ) :
-			?>
-			<span class="tags-links tax-links">
-				<i class="fa fa-tags"></i><?php printf( __( '%1$s', 'sdm' ), $tags_list ); ?>
-			</span>
-			<?php endif; // End if $tags_list ?>
-		<?php endif; // End if 'post' == get_post_type() ?>
-	</footer>
 </article>
