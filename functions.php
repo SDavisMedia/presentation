@@ -84,7 +84,7 @@ function presentation_scripts() {
 	// main stylesheet
 	wp_enqueue_style( 'presentation-style', get_stylesheet_uri() );
 	// font awesome
-	wp_enqueue_style( 'fontawesome', get_stylesheet_directory_uri() . '/inc/fonts/font-awesome/css/font-awesome.min.css' );
+	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/inc/fonts/font-awesome/css/font-awesome.min.css' );
 	// navigation toggle
 	wp_enqueue_script( 'presentation-navigation', get_template_directory_uri() . '/inc/js/navigation.js', array(), '20120206', true );
 	
