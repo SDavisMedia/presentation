@@ -42,15 +42,7 @@ function sdm_customize_register( $wp_customize ) {
 		'section'	=> 'title_tagline',
 		'settings'	=> 'sdm_logo',
 		'priority'	=> 20
-	) ) );	
-	// hide the tagline?
-	$wp_customize->add_setting( 'sdm_hide_tagline', array( 'default' => 0 ) );
-	$wp_customize->add_control( 'sdm_hide_tagline', array(
-		'label'		=> __( 'Hide Tagline', 'sdm' ),
-		'section'	=> 'title_tagline',
-		'priority'	=> 40,
-		'type'      => 'checkbox',
-	) );
+	) ) );
 
 
 	/** ===============
