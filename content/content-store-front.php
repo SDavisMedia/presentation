@@ -35,7 +35,7 @@ $products = new WP_Query( $product_args );
 				<div class="product-image">
 					<?php if ( has_post_thumbnail() ) { ?>
 						<a href="<?php the_permalink(); ?>">
-							<?php the_post_thumbnail( 'product-img' ); ?>
+							<?php the_post_thumbnail( 'product-img', array( 'class' => 'product-img' ) ); ?>
 						</a>
 					<?php } ?>
 				</div>

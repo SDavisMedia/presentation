@@ -25,9 +25,23 @@ add_filter( 'wp_page_menu_args', 'sdm_page_menu_args' );
  */
 function sdm_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
-	if ( is_multi_author() ) {
+	if ( is_multi_author() ) :
 		$classes[] = 'group-blog';
-	}
+	endif;
+	
+	if ( is_page_template( 'edd_templates/edd-store-front.php' ) ) :		
+		$classes[] = 'edd-store-front-template';
+	elseif ( is_page_template( 'edd_templates/edd-checkout.php' ) ) :		
+		$classes[] = 'edd-checkout-template';	
+	elseif ( is_page_template( 'edd_templates/edd-confirmation.php' ) ) :		
+		$classes[] = 'edd-confirmation-template';
+	elseif ( is_page_template( 'edd_templates/edd-history.php' ) ) :		
+		$classes[] = 'edd-history-template';
+	elseif ( is_page_template( 'edd_templates/edd-members.php' ) ) :		
+		$classes[] = 'edd-members-template';
+	elseif ( is_page_template( 'edd_templates/edd-failed.php' ) ) :		
+		$classes[] = 'edd-failed-template';				
+	endif;
 
 	return $classes;
 }
