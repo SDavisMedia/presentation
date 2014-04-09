@@ -288,10 +288,6 @@ input[type="button"]:hover {
 }
 
 /*--------------------------------------------------------------
-Navigation
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
 Links
 --------------------------------------------------------------*/
 a {
@@ -573,6 +569,35 @@ Content
 footer.entry-meta {
 	border: none;
 	padding: 0;
+}
+
+/*--------------------------------------------------------------
+Post Formats
+--------------------------------------------------------------*/
+article.format-aside {
+	background: #F2F3F5;
+	padding: 32px;
+	border-radius: 3px;
+}
+article.format-aside .aside-meta,
+article.format-aside .entry-header .entry-meta {
+	color: #8F9EB8;
+	font-size: 13px;
+	padding: 0;
+	border: none;
+	margin-bottom: 1.5em;
+}
+article.format-aside .entry-header {
+	margin-bottom: 20px;
+}
+article.format-aside .aside-meta .fa {
+	margin-right: 6px;
+}
+article.format-aside .comments-link {
+	display: none;
+}
+article.format-chat p:nth-child(even) {
+	color: #8F9EB8;
 }
 
 /*--------------------------------------------------------------

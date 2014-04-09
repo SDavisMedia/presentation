@@ -6,7 +6,9 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php if ( ! has_post_format( 'aside' ) ) : ?>
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php endif; ?>
 
 		<div class="entry-meta">
 			<?php sdm_posted_on(); ?>
@@ -65,7 +67,7 @@
 </article>
 
 <?php // show post footer? theme customizer options ?>
-<?php if ( get_theme_mod( 'sdm_post_footer' ) == 1 ) : ?>
+<?php if ( get_theme_mod( 'sdm_post_footer' ) == 1 && ! has_post_format( 'aside' ) ) : ?>
 	<div class="single-post-footer">
 		Post Footer
 	</div>
