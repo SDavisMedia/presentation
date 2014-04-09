@@ -39,7 +39,7 @@
 						</div>
 					<?php endif; ?>
 					<?php if ( get_theme_mod( 'sdm_product_view_details' ) ) : ?>
-						<a class="view-details" href="<?php the_permalink(); ?>"><?php echo get_theme_mod( 'sdm_product_view_details' ); ?></a>
+						<a class="view-details" href="<?php the_permalink(); ?>"><?php echo get_theme_mod( 'sdm_product_view_details' ) . ' &rarr;'; ?></a>
 					<?php endif; ?>
 				</div>
 			</div>
