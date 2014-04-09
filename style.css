@@ -39,7 +39,13 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	word-wrap:		break-word;
 }
 body {
+	background: #F2F3F5;
+	color: #8F9EB8;
+}
+.header-area,
+.main-content-area {
 	background: #fff;
+	color: #404040;
 }
 article,
 aside,
@@ -110,7 +116,6 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
 	font-size: 16px;
 	line-height: 1.6em;
@@ -529,6 +534,17 @@ Clearings
 }
 
 /*--------------------------------------------------------------
+Top bar
+--------------------------------------------------------------*/
+.top-bar {
+	padding: 8px 0;
+}
+.site-description {
+	font-size: 16px;
+	margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
 Header
 --------------------------------------------------------------*/
 .site-header {
@@ -624,16 +640,16 @@ footer.entry-meta {
 	display: inline-block;
 	font-size: 18px;
 }
-.single-post-footer .social-links {
+.social-links {
 	position: absolute;
 		top: 10px;
 		right: 0;
 }
-.single-post-footer .social-links a {
+.social-links a {
 	color: #8F9EB8;
 	margin-left: 6px;
 }
-.single-post-footer .social-links a:hover {
+.social-links a:hover {
 	color: #404040;
 }
 
@@ -767,6 +783,14 @@ Sidebar
 /* Search widget */
 .widget_search .search-submit {
 	display: none;
+}
+
+/*--------------------------------------------------------------
+Footer
+--------------------------------------------------------------*/
+.site-footer {
+	color: #8F9EB8;
+	font-size: 13px;
 }
 
 /*--------------------------------------------------------------
@@ -1076,7 +1100,11 @@ Responsive
 		padding-right: 20px;
 		padding-left: 20px;
 	}
-	.header-menu {
+	.top-bar {
+		padding-right: 100px;
+	}
+	.header-menu,
+	.top-bar .social-links {
 		right: 20px;
 	}
 	.threecol.product {
