@@ -20,7 +20,7 @@ $ping = get_bloginfo('pingback_url');
 	<div class="top-bar-area full">
 		<div class="main">
 			<div id="top-bar" class="top-bar inner">
-				<?php if ( get_theme_mod( 'sdm_hide_tagline' ) != 1 ) : ?>
+				<?php if ( get_theme_mod( 'presentation_hide_tagline' ) != 1 ) : ?>
 					<h1 class="site-description"><?php echo $tagline; ?></h1>
 				<?php endif; ?>
 				<div class="social-links">
@@ -28,19 +28,19 @@ $ping = get_bloginfo('pingback_url');
 					$social_profiles = array( 
 						'twitter'	=> array(
 							'icon' 		=> '<i class="fa fa-twitter-square"></i>',
-							'option'	=> get_theme_mod( 'sdm_twitter' )
+							'option'	=> get_theme_mod( 'presentation_twitter' )
 						),
 						'facebook'	=> array(
 							'icon' 		=> '<i class="fa fa-facebook-square"></i>',
-							'option'	=> get_theme_mod( 'sdm_facebook' )
+							'option'	=> get_theme_mod( 'presentation_facebook' )
 						),
 						'gplus'	=> array(
 							'icon' 		=> '<i class="fa fa-google-plus-square"></i>',
-							'option'	=> get_theme_mod( 'sdm_gplus' )
+							'option'	=> get_theme_mod( 'presentation_gplus' )
 						),
 						'linkedin'	=> array(
 							'icon' 		=> '<i class="fa fa-linkedin-square"></i>',
-							'option'	=> get_theme_mod( 'sdm_linkedin' )
+							'option'	=> get_theme_mod( 'presentation_linkedin' )
 						),
 					);
 					foreach ( $social_profiles as $profile ) {
@@ -58,9 +58,9 @@ $ping = get_bloginfo('pingback_url');
 			<header id="masthead" class="site-header inner">
 				<div class="header-elements">
 					<span class="site-title">
-						<?php if ( get_theme_mod( 'sdm_logo' ) ) : ?>
+						<?php if ( get_theme_mod( 'presentation_logo' ) ) : ?>
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-								<img src="<?php echo get_theme_mod( 'sdm_logo' ); ?>" alt="<?php echo esc_attr( $title ); ?>">
+								<img src="<?php echo get_theme_mod( 'presentation_logo' ); ?>" alt="<?php echo esc_attr( $title ); ?>">
 							</a>
 						<?php else : ?>
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( $title ); ?>">
@@ -75,8 +75,8 @@ $ping = get_bloginfo('pingback_url');
 			</header>
 			<div class="main-menu-container inner">
 				<nav id="site-navigation" class="main-navigation clear" role="navigation">
-					<span class="menu-toggle"><?php echo '<i class="fa fa-bars"></i> ' . __( 'Menu', 'sdm' ); ?></span>
-					<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'sdm' ); ?></a>
+					<span class="menu-toggle"><?php echo '<i class="fa fa-bars"></i> ' . __( 'Menu', 'presentation' ); ?></span>
+					<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'presentation' ); ?></a>
 		
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => '' ) ); ?>
 				</nav>

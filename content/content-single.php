@@ -11,19 +11,19 @@
 		<?php endif; ?>
 
 		<div class="entry-meta">
-			<?php sdm_posted_on(); ?>
+			<?php presentation_posted_on(); ?>
 		</div>
 	</header>
 
 	<div class="entry-content">
 		<?php
 			// display featured image?
-			if ( has_post_thumbnail() && get_theme_mod( 'sdm_single_featured_image' ) == 1 ) :
+			if ( has_post_thumbnail() && get_theme_mod( 'presentation_single_featured_image' ) == 1 ) :
 				the_post_thumbnail( 'full', array( 'class' => 'featured-img' ) );
 			endif; 
 			the_content(); 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'sdm' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'presentation' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -31,10 +31,10 @@
 
 	<footer class="entry-meta">
 		<?php
-		$category_list = get_the_category_list( __( ', ', 'sdm' ) );
-		$tag_list = get_the_tag_list( '', __( ', ', 'sdm' ) );
+		$category_list = get_the_category_list( __( ', ', 'presentation' ) );
+		$tag_list = get_the_tag_list( '', __( ', ', 'presentation' ) );
 
-		if ( ! sdm_categorized_blog() ) :
+		if ( ! presentation_categorized_blog() ) :
 			// This blog only has 1 category so we just need to worry about tags in the meta text
 			if ( '' != $tag_list ) :
 			?>
@@ -67,29 +67,29 @@
 </article>
 
 <?php // show post footer? theme customizer options ?>
-<?php if ( get_theme_mod( 'sdm_post_footer' ) == 1 && ! has_post_format( 'aside' ) ) : ?>
+<?php if ( get_theme_mod( 'presentation_post_footer' ) == 1 && ! has_post_format( 'aside' ) ) : ?>
 	<div class="single-post-footer clear">
 		<div class="post-footer-author">
 			<?php echo get_avatar( get_the_author_meta( 'ID' ), 32, '', get_the_author_meta( 'display_name' ) ); ?>
-			<h5 class="author-name"><?php echo __( 'written by ', 'sdm' ) . get_the_author_meta( 'display_name' ); ?></h5>
+			<h5 class="author-name"><?php echo __( 'written by ', 'presentation' ) . get_the_author_meta( 'display_name' ); ?></h5>
 			<div class="social-links">
 				<?php
 				$social_profiles = array( 
 					'twitter'	=> array(
 						'icon' 		=> '<i class="fa fa-twitter-square"></i>',
-						'option'	=> get_theme_mod( 'sdm_twitter' )
+						'option'	=> get_theme_mod( 'presentation_twitter' )
 					),
 					'facebook'	=> array(
 						'icon' 		=> '<i class="fa fa-facebook-square"></i>',
-						'option'	=> get_theme_mod( 'sdm_facebook' )
+						'option'	=> get_theme_mod( 'presentation_facebook' )
 					),
 					'gplus'	=> array(
 						'icon' 		=> '<i class="fa fa-google-plus-square"></i>',
-						'option'	=> get_theme_mod( 'sdm_gplus' )
+						'option'	=> get_theme_mod( 'presentation_gplus' )
 					),
 					'linkedin'	=> array(
 						'icon' 		=> '<i class="fa fa-linkedin-square"></i>',
-						'option'	=> get_theme_mod( 'sdm_linkedin' )
+						'option'	=> get_theme_mod( 'presentation_linkedin' )
 					),
 				);
 				foreach ( $social_profiles as $profile ) {

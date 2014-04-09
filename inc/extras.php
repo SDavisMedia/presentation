@@ -11,11 +11,11 @@
  * @param array $args Configuration arguments.
  * @return array
  */
-function sdm_page_menu_args( $args ) {
+function presentation_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'sdm_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'presentation_page_menu_args' );
 
 /**
  * Adds custom classes to the array of body classes.
@@ -23,7 +23,7 @@ add_filter( 'wp_page_menu_args', 'sdm_page_menu_args' );
  * @param array $classes Classes for the body element.
  * @return array
  */
-function sdm_body_classes( $classes ) {
+function presentation_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) :
 		$classes[] = 'group-blog';
@@ -45,7 +45,7 @@ function sdm_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'sdm_body_classes' );
+add_filter( 'body_class', 'presentation_body_classes' );
 
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
@@ -54,7 +54,7 @@ add_filter( 'body_class', 'sdm_body_classes' );
  * @param string $sep Optional separator.
  * @return string The filtered title.
  */
-function sdm_wp_title( $title, $sep ) {
+function presentation_wp_title( $title, $sep ) {
 	if ( is_feed() ) {
 		return $title;
 	}
@@ -72,12 +72,12 @@ function sdm_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 ) {
-		$title .= " $sep " . sprintf( __( 'Page %s', 'sdm' ), max( $paged, $page ) );
+		$title .= " $sep " . sprintf( __( 'Page %s', 'presentation' ), max( $paged, $page ) );
 	}
 
 	return $title;
 }
-add_filter( 'wp_title', 'sdm_wp_title', 10, 2 );
+add_filter( 'wp_title', 'presentation_wp_title', 10, 2 );
 
 /**
  * Sets the authordata global when viewing an author archive.
@@ -91,11 +91,11 @@ add_filter( 'wp_title', 'sdm_wp_title', 10, 2 );
  * @global WP_Query $wp_query WordPress Query object.
  * @return void
  */
-function sdm_setup_author() {
+function presentation_setup_author() {
 	global $wp_query;
 
 	if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
 		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
 	}
 }
-add_action( 'wp', 'sdm_setup_author' );
+add_action( 'wp', 'presentation_setup_author' );

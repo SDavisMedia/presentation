@@ -20,28 +20,28 @@ get_header(); ?>
 							single_tag_title();
 
 						elseif ( is_author() ) :
-							printf( __( 'Author: %s', 'sdm' ), '<span class="vcard">' . get_the_author() . '</span>' );
+							printf( __( 'Author: %s', 'presentation' ), '<span class="vcard">' . get_the_author() . '</span>' );
 
 						elseif ( is_day() ) :
-							printf( __( 'Day: %s', 'sdm' ), '<span>' . get_the_date() . '</span>' );
+							printf( __( 'Day: %s', 'presentation' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'sdm' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'sdm' ) ) . '</span>' );
+							printf( __( 'Month: %s', 'presentation' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'presentation' ) ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( __( 'Year: %s', 'sdm' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'sdm' ) ) . '</span>' );
+							printf( __( 'Year: %s', 'presentation' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'presentation' ) ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-							_e( 'Asides', 'sdm' );
+							_e( 'Asides', 'presentation' );
 
 						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Links', 'sdm' );
+							_e( 'Links', 'presentation' );
 
 						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
-							_e( 'Chats', 'sdm' );
+							_e( 'Chats', 'presentation' );
 
 						else :
-							_e( 'Archives', 'sdm' );
+							_e( 'Archives', 'presentation' );
 
 						endif;
 					?>
@@ -68,7 +68,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php sdm_paging_nav(); ?>
+			<?php presentation_paging_nav(); ?>
 
 		<?php else : ?>
 

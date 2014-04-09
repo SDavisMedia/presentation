@@ -11,35 +11,35 @@
 	
 			<?php if ( 'post' == get_post_type() ) : ?>
 				<div class="entry-meta">
-					<?php sdm_posted_on(); ?>
+					<?php presentation_posted_on(); ?>
 				</div>
 			<?php endif; ?>
 		</header>
 	<?php endif; ?>
 
 	<?php // show excerpts on search results and main content if options is selected ?>
-	<?php if ( ! has_post_format( 'aside' ) && ( is_search() || get_theme_mod( 'sdm_post_content' ) == 'excerpt' ) ) : ?>
+	<?php if ( ! has_post_format( 'aside' ) && ( is_search() || get_theme_mod( 'presentation_post_content' ) == 'excerpt' ) ) : ?>
 		<div class="entry-summary">
 			<?php the_excerpt(); ?>
 		</div>
 	<?php else : ?>
 		<?php if ( has_post_format( 'aside' ) ) : ?>
 			<div class="aside-meta">
-				<?php sdm_posted_on(); ?>
+				<?php presentation_posted_on(); ?>
 			</div>
 		<?php endif; ?>
 		<div class="entry-content">
 			
 			<?php 
 			// display featured image full
-			if ( has_post_thumbnail() && get_theme_mod( 'sdm_featured_image' ) != 0 ) :
+			if ( has_post_thumbnail() && get_theme_mod( 'presentation_featured_image' ) != 0 ) :
 				the_post_thumbnail( 'full', array( 'class' => 'featured-img' ) );
 			endif;
 			
-			the_content( __( get_theme_mod( 'sdm_read_more' ), 'sdm' ) );
+			the_content( __( get_theme_mod( 'presentation_read_more' ), 'presentation' ) );
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'sdm' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'presentation' ),
 				'after'  => '</div>',
 			) );
 			?>
@@ -49,10 +49,10 @@
 	<?php if ( has_post_format( 'aside' ) ) : ?>
 		<footer class="entry-meta">
 			<?php
-			$category_list = get_the_category_list( __( ', ', 'sdm' ) );
-			$tag_list = get_the_tag_list( '', __( ', ', 'sdm' ) );
+			$category_list = get_the_category_list( __( ', ', 'presentation' ) );
+			$tag_list = get_the_tag_list( '', __( ', ', 'presentation' ) );
 	
-			if ( ! sdm_categorized_blog() ) :
+			if ( ! presentation_categorized_blog() ) :
 				// This blog only has 1 category so we just need to worry about tags in the meta text
 				if ( '' != $tag_list ) :
 				?>

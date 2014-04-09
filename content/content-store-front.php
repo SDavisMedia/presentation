@@ -6,7 +6,7 @@
  */
 $store_page_setting = (is_front_page() && is_page_template('edd_templates/edd-store-front.php') ? 'page' : 'paged' );
 $current_page = get_query_var( $store_page_setting );
-$per_page = intval( get_theme_mod( 'sdm_store_front_count', 9 ) );
+$per_page = intval( get_theme_mod( 'presentation_store_front_count', 9 ) );
 $offset = $current_page > 0 ? $per_page * ( $current_page-1 ) : 0;
 $product_args = array(
 	'post_type'			=> 'download',
@@ -19,12 +19,12 @@ $products = new WP_Query( $product_args );
 <div id="store-front">
 <?php if ( $products->have_posts() ) : $i = 1; ?>
 	<div class="store-info">
-		<?php if ( get_theme_mod( 'sdm_edd_store_archives_title' ) ) : ?>
-			<h1 class="store-title"><?php echo get_theme_mod( 'sdm_edd_store_archives_title' ); ?></h1>
+		<?php if ( get_theme_mod( 'presentation_edd_store_archives_title' ) ) : ?>
+			<h1 class="store-title"><?php echo get_theme_mod( 'presentation_edd_store_archives_title' ); ?></h1>
 		<?php endif; ?>
-		<?php if ( get_theme_mod( 'sdm_edd_store_archives_description' ) ) : ?>
+		<?php if ( get_theme_mod( 'presentation_edd_store_archives_description' ) ) : ?>
 			<div class="store-description">
-				<?php echo wpautop( get_theme_mod( 'sdm_edd_store_archives_description' ) ); ?>
+				<?php echo wpautop( get_theme_mod( 'presentation_edd_store_archives_description' ) ); ?>
 			</div>
 		<?php endif; ?>
 	</div>
@@ -43,13 +43,13 @@ $products = new WP_Query( $product_args );
 					<a class="product-title" href="<?php the_permalink(); ?>">
 						<?php the_title( '<h3>', '</h3>' ); ?>
 					</a>
-					<?php if ( get_theme_mod( 'sdm_download_description' ) != 1 ) : // show downloads description? ?>
+					<?php if ( get_theme_mod( 'presentation_download_description' ) != 1 ) : // show downloads description? ?>
 						<div class="product-info">
 							<?php the_excerpt(); ?>
 						</div>
 					<?php endif; ?>
-					<?php if ( get_theme_mod( 'sdm_product_view_details' ) ) : ?>
-						<a class="view-details" href="<?php the_permalink(); ?>"><?php echo get_theme_mod( 'sdm_product_view_details' ) . ' &rarr;'; ?></a>
+					<?php if ( get_theme_mod( 'presentation_product_view_details' ) ) : ?>
+						<a class="view-details" href="<?php the_permalink(); ?>"><?php echo get_theme_mod( 'presentation_product_view_details' ) . ' &rarr;'; ?></a>
 					<?php endif; ?>
 				</div>
 			</div>
@@ -74,8 +74,8 @@ $products = new WP_Query( $product_args );
 	<?php endif; ?>
 <?php else : ?>
 	<div class="store-404">
-		<h2 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'sdm' ); ?></h2>
-		<p><?php _e( 'It looks like nothing was found at this location. Try using the search form below.', 'sdm' ); ?></p>
+		<h2 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'presentation' ); ?></h2>
+		<p><?php _e( 'It looks like nothing was found at this location. Try using the search form below.', 'presentation' ); ?></p>
 		<?php get_search_form(); ?>
 	</div>
 <?php endif; ?>
