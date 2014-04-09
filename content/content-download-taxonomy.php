@@ -63,10 +63,10 @@
 		</div>
 	<?php endif; ?>
 <?php else : ?>
-
-	<h2 class="center"><?php _e( 'Not Found', 'sdm' ); ?></h2>
-	<p class="center"><?php _e( 'Sorry, but you are looking for something that isn\'t here.', 'sdm' ); ?></p>
-	<?php get_search_form(); ?>
-
+	<div class="store-404">
+		<h2 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'sdm' ); ?></h2>
+		<p><?php _e( 'It looks like nothing was found at this location. Try using the search form below.', 'sdm' ); ?></p>
+		<?php get_search_form(); ?>
+	</div>
 <?php endif; ?>
 </div>

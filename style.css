@@ -565,6 +565,15 @@ Content
 .site-content {
 	padding-top: 0;
 }
+.error404 #primary {
+	padding: 0;
+	width: 100%;
+}
+.error404 #content {
+	margin: 0 auto;
+	max-width: 700px;
+	min-height: 300px
+}
 .page-title {
 	color: #8F9EB8;
 	font-size: 22px;
@@ -935,6 +944,11 @@ input[type=submit].edd-submit {
 .edd-failed-template #content {
 	margin: 0 auto;
 	max-width: 700px;
+}
+.store-404 {
+	margin: 0 auto;
+	max-width: 700px;
+	min-height: 268px
 }
 #edd_user_history td, 
 #edd_user_history th {
