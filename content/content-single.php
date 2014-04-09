@@ -68,7 +68,42 @@
 
 <?php // show post footer? theme customizer options ?>
 <?php if ( get_theme_mod( 'sdm_post_footer' ) == 1 && ! has_post_format( 'aside' ) ) : ?>
-	<div class="single-post-footer">
-		Post Footer
+	<div class="single-post-footer clear">
+		<div class="post-footer-author">
+			<?php echo get_avatar( get_the_author_meta( 'ID' ), 32, '', get_the_author_meta( 'display_name' ) ); ?>
+			<h5 class="author-name"><?php echo __( 'written by ', 'sdm' ) . get_the_author_meta( 'display_name' ); ?></h5>
+			<div class="social-links">
+				<?php
+				$social_profiles = array( 
+					'twitter'	=> array(
+						'icon' 		=> '<i class="fa fa-twitter-square"></i>',
+						'option'	=> get_theme_mod( 'sdm_twitter' )
+					),
+					'facebook'	=> array(
+						'icon' 		=> '<i class="fa fa-facebook-square"></i>',
+						'option'	=> get_theme_mod( 'sdm_facebook' )
+					),
+					'gplus'	=> array(
+						'icon' 		=> '<i class="fa fa-google-plus-square"></i>',
+						'option'	=> get_theme_mod( 'sdm_gplus' )
+					),
+					'linkedin'	=> array(
+						'icon' 		=> '<i class="fa fa-linkedin-square"></i>',
+						'option'	=> get_theme_mod( 'sdm_linkedin' )
+					),
+				);
+				foreach ( $social_profiles as $profile ) {
+					if ( '' != $profile[ 'option' ] ) :
+						echo '<a href="', $profile[ 'option' ], '">', $profile[ 'icon' ], '</a>'; 
+					endif;
+				}
+				?>
+			</div>
+		</div>
+		<?php if ( ! get_the_author_meta( 'description' ) == '' ) : ?>
+			<div class="post-footer-author-bio">
+				<p><?php echo get_the_author_meta( 'description' ); ?></p>
+			</div>
+		<?php endif; ?>
 	</div>
 <?php endif; ?>
