@@ -64,7 +64,9 @@ $products = new WP_Query( $product_args );
 				'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 				'format' => '?paged=%#%',
 				'current' => max( 1, $current_page ),
-				'total' => $products->max_num_pages
+				'total' => $products->max_num_pages,
+				'prev_text' => '<i class="fa fa-arrow-circle-left"></i> Previous',
+				'next_text' => 'Next <i class="fa fa-arrow-circle-right"></i>'
 			) );
 		?>
 	</div>
