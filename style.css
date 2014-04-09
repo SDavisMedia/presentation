@@ -575,6 +575,10 @@ footer.entry-meta {
 /*--------------------------------------------------------------
 Comments
 --------------------------------------------------------------*/
+.response-title {
+	color: #8F9EB8;
+	font-style: italic;
+}
 .comment-content a {
 	word-wrap: break-word;
 }
