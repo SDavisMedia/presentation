@@ -403,14 +403,14 @@ Menus
 .paging-navigation .nav-previous,
 .post-navigation .nav-previous {
 	float: left;
-	width: 50%;
+	width: 48%;
 }
 .comment-navigation .nav-next,
 .paging-navigation .nav-next,
 .post-navigation .nav-next {
 	float: right;
 	text-align: right;
-	width: 50%;
+	width: 48%;
 }
 
 /*--------------------------------------------------------------
@@ -518,17 +518,10 @@ Content
 	color: #8F9EB8;
 	font-size: 22px;
 }
-.tax-links .fa {
-	margin-right: 8px;
-}
-
-/*--------------------------------------------------------------
-Singulars
---------------------------------------------------------------*/
 .sticky {
 }
 .hentry {
-	margin: 0 0 1.5em;
+	margin: 0 0 3em;
 }
 .entry-header {
 	margin-bottom: 2em;
@@ -541,22 +534,42 @@ Singulars
 .group-blog .byline {
 	display: inline;
 }
-.entry-meta {
+.entry-meta,
+.paging-navigation,
+.post-navigation {
 	color: #8F9EB8;
+	font-size: 13px;
 	padding: 10px 0;
 	border: 1px solid #eee;
 	border-width: 1px 0;
 }
+.byline {
+	margin-right: 2em;
+}
 .featured-img {
 	margin-bottom: 1.5em;
 }
-footer.entry-meta {
-	font-size: 13px;
-	border: none;
+.single-post-footer {
+	margin-bottom: 1.5em;
+}
+.comments-link {
+	float: right;
+}
+.entry-header .entry-meta .fa,
+.entry-meta .tax-links .fa,
+.nav-previous .fa {
+	margin-right: 6px;
+}
+.nav-next .fa {
+	margin-left: 6px;
 }
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+footer.entry-meta {
+	border: none;
+	padding: 0;
 }
 
 /*--------------------------------------------------------------
