@@ -586,7 +586,6 @@ Content
 .entry-header {
 	margin-bottom: 2em;
 }
-.byline,
 .updated {
 	display: none;
 }
@@ -1152,11 +1151,16 @@ Responsive
 }
 
 @media screen and (max-width: 768px) {
-	.site-header {
+	.site-header,
+	.top-bar {
 		text-align: center;
 	}
-	.header-menu {
+	.header-menu,
+	.top-bar .social-links {
 		position: static;
+	}
+	.top-bar {
+		padding-right: 20px;
 	}
 	.header-menu ul {
 		text-align: center;
