@@ -8,6 +8,7 @@
  */
 define( 'PRESENTATION_NAME', 'Presentation' );
 define( 'PRESENTATION_VERSION', '1.0' );
+define( 'PRESENTATION_AUTHOR', 'Sean Davis' );
 define( 'PRESENTATION_HOME', 'https://easydigitaldownloads.com/' );
 
 
@@ -105,6 +106,11 @@ require get_template_directory() . '/inc/extras.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Updater class
+ */
+require get_template_directory() . '/inc/updater.php';
 
 
 /** ===============
