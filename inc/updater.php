@@ -159,7 +159,7 @@ $test_license = trim( get_option( 'presentation_license_key' ) );
 
 $edd_updater = new PRESENTATION_SL_Theme_Updater( array( 
 		'remote_api_url' 	=> PRESENTATION_SL_STORE_URL,
-		'version' 			=> PRESENTATION_VERSION,
+		'version' 			=> '1.0',
 		'license' 			=> $test_license,
 		'item_name' 		=> PRESENTATION_DOWNLOAD_TITLE,
 		'author'			=> PRESENTATION_AUTHOR
