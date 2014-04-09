@@ -596,6 +596,9 @@ article.format-aside .aside-meta .fa {
 article.format-aside .comments-link {
 	display: none;
 }
+article.format-link .entry-content a {
+	font-size: 130%;
+}
 article.format-chat p:nth-child(even) {
 	color: #8F9EB8;
 }

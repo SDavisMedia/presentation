@@ -33,7 +33,7 @@ function sdm_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	// Enable support for Post Formats
-	add_theme_support( 'post-formats', array( 'aside', 'link', 'quote', 'chat', 'image' ) );
+	add_theme_support( 'post-formats', array( 'aside', 'link', 'chat' ) );
 	
 	// add a hard cropped (for uniformity) image size for the product grid
 	add_image_size( 'product-img', 540, 360, true );
