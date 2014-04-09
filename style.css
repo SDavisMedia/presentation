@@ -817,7 +817,8 @@ Easy Digital Downloads
 .edd-confirmation-template #edd_purchase_receipt tbody td:first-child, 
 #edd_purchase_receipt_products th,
 #edd_profile_editor_form,
-#edd_checkout_form_wrap fieldset:not(#edd_purchase_submit) {
+#edd_checkout_form_wrap fieldset:not(#edd_purchase_submit),
+#edd_login_form {
 	background: #F2F3F5;
 }
 #edd_checkout_form_wrap #edd-discount-code-wrap, 
@@ -825,7 +826,8 @@ Easy Digital Downloads
 #edd_checkout_form_wrap #edd-new-account-wrap, 
 #edd_checkout_form_wrap #edd_final_total_wrap, 
 #edd_checkout_form_wrap #edd_show_discount,
-#edd_checkout_form_wrap fieldset {
+#edd_checkout_form_wrap fieldset,
+#edd_login_form {
 	border: 2px solid #E1E6F0; 
 }
 #secondary .edd_download_purchase_form {
@@ -1011,6 +1013,20 @@ input[type=submit].edd-submit {
 .tax-download_category .product .continue-reading,
 .tax-download_tag .product .continue-reading {
 	display: none;
+}
+#edd_login_form {
+	padding: 16px;
+	margin-top: 32px;
+}
+#edd_login_form legend {
+	margin-bottom: 1.5em;
+}
+#edd_login_form label {
+	display: inline-block;
+	width: 100px;
+}
+#edd_login_submit {
+	min-width: 150px;
 }
 
 /*--------------------------------------------------------------
