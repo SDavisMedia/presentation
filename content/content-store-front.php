@@ -57,7 +57,7 @@ $products = new WP_Query( $product_args );
 			<?php $i+=1; ?>
 		<?php endwhile; ?>
 	</div>	
-	<?php if ( ! $products->max_num_pages == 1 ) : ?>		
+	<?php if ( $products->max_num_pages > 1 ) : ?>		
 		<div class="store-pagination">
 			<?php 					
 				$big = 999999999; // need an unlikely integer					
