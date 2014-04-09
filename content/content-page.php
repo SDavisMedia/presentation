@@ -18,5 +18,4 @@
 			) );
 		?>
 	</div>
-	<?php edit_post_link( __( 'Edit', 'sdm' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 </article>
