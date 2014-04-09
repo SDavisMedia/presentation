@@ -46,20 +46,22 @@
 
 			<?php $i+=1; ?>
 		<?php endwhile; ?>
-	</div>			
-	<div class="store-pagination">
-		<?php 					
-			$big = 999999999; // need an unlikely intege					
-			echo paginate_links( array(
-				'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-				'format' => '?paged=%#%',
-				'current' => max( 1, $current_page ),
-				'total' => $wp_query->max_num_pages,
-				'prev_text' => '<i class="fa fa-arrow-circle-left"></i> Previous',
-				'next_text' => 'Next <i class="fa fa-arrow-circle-right"></i>'
-			) );
-		?>
-	</div>
+	</div>		
+	<?php if ( ! $wp_query->max_num_pages == 1 ) : ?>		
+		<div class="store-pagination">
+			<?php 					
+				$big = 999999999; // need an unlikely integer					
+				echo paginate_links( array(
+					'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+					'format' => '?paged=%#%',
+					'current' => max( 1, $current_page ),
+					'total' => $wp_query->max_num_pages,
+					'prev_text' => '<i class="fa fa-arrow-circle-left"></i> Previous',
+					'next_text' => 'Next <i class="fa fa-arrow-circle-right"></i>'
+				) );
+			?>
+		</div>
+	<?php endif; ?>
 <?php else : ?>
 
 	<h2 class="center"><?php _e( 'Not Found', 'sdm' ); ?></h2>
