@@ -40,12 +40,14 @@ $ping = get_bloginfo('pingback_url');
 					</nav>
 				</div>
 			</header>
-			<nav id="site-navigation" class="main-navigation clear" role="navigation">
-				<span class="menu-toggle"><?php echo '<i class="fa fa-bars"></i> ' . __( 'Menu', 'sdm' ); ?></span>
-				<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'sdm' ); ?></a>
-	
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => '' ) ); ?>
-			</nav>
+			<div class="main-menu-container inner">
+				<nav id="site-navigation" class="main-navigation clear" role="navigation">
+					<span class="menu-toggle"><?php echo '<i class="fa fa-bars"></i> ' . __( 'Menu', 'sdm' ); ?></span>
+					<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'sdm' ); ?></a>
+		
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => '' ) ); ?>
+				</nav>
+			</div>
 		</div>
 	</div>
 	<div class="main-content-area full">
