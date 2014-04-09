@@ -1008,7 +1008,8 @@ input[type=submit].edd-submit {
 #edd_profile_editor_form p {
 	margin-bottom: 1em;
 }
-.tax-download_category .product .continue-reading {
+.tax-download_category .product .continue-reading,
+.tax-download_tag .product .continue-reading {
 	display: none;
 }
 
