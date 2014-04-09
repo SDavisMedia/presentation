@@ -13,6 +13,133 @@ Tags:
 */
 
 /*--------------------------------------------------------------
+Color scheme
+--------------------------------------------------------------*/
+/* primary design color */
+input[type="submit"],
+input[type="button"],
+.main-navigation,
+.main-navigation ul li:hover > ul {
+	background: #2980B9;
+}
+
+/* complementary design color */
+.main-navigation a:hover {
+	background: #3498DB;
+}
+a,
+.header-menu a:hover,
+.product-title:hover  {
+	color: #3498DB;
+}
+
+/* subtle body text color */
+body,
+blockquote, 
+q,
+code, 
+kbd, 
+tt, 
+var,
+.header-menu a,
+.navigation a,
+.store-pagination a,
+.comment-navigation a,
+.page-title,
+.entry-meta,
+.paging-navigation,
+.post-navigation,
+.comment-navigation,
+.store-pagination,
+.social-links a,
+article.format-aside .aside-meta,
+article.format-aside .entry-header .entry-meta,
+article.format-chat p:nth-child(even),
+.response-title,
+.comment-meta,
+.site-footer,
+.entry-content div.sharedaddy div.sd-block,
+.entry-summary div.sharedaddy div.sd-block {
+	color: #8F9EB8;
+}
+
+/* element background/border design color */
+body,
+pre,
+.single-post-footer,
+article.format-aside,
+#secondary aside,
+#secondary .edd_download_purchase_form,
+.threecol.product,
+#edd_checkout_cart .edd_cart_header_row th,
+#edd_checkout_form_wrap #edd-discount-code-wrap, 
+#edd_checkout_form_wrap #edd-login-account-wrap, 
+#edd_checkout_form_wrap #edd-new-account-wrap, 
+#edd_checkout_form_wrap #edd_final_total_wrap, 
+#edd_checkout_form_wrap #edd_show_discount,
+.edd-confirmation-template #edd_purchase_receipt thead th:first-child, 
+.edd-confirmation-template #edd_purchase_receipt tbody td:first-child, 
+#edd_purchase_receipt_products th,
+#edd_profile_editor_form,
+#edd_checkout_form_wrap fieldset:not(#edd_purchase_submit),
+#edd_login_form,
+.wp-caption {
+	background: #F2F3F5;
+}
+dd {
+	border-left: 3px solid #F2F3F5;
+}
+.entry-meta,
+.paging-navigation,
+.post-navigation,
+.comment-navigation,
+.store-pagination,
+.comment-meta,
+.entry-content div.sharedaddy div.sd-block,
+.entry-summary div.sharedaddy div.sd-block {
+	border: 1px solid #F2F3F5;
+}
+
+/* border for above background color */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea,
+#edd_checkout_form_wrap #edd-discount-code-wrap, 
+#edd_checkout_form_wrap #edd-login-account-wrap, 
+#edd_checkout_form_wrap #edd-new-account-wrap, 
+#edd_checkout_form_wrap #edd_final_total_wrap, 
+#edd_checkout_form_wrap #edd_show_discount,
+#edd_checkout_form_wrap fieldset,
+#edd_login_form,
+#edd_purchase_receipt,
+#edd_user_history,
+#edd_purchase_receipt_products,
+#edd_profile_editor_form,
+.wp-caption {
+	border: 2px solid #E1E6F0;
+}
+.post-footer-author,
+#edd_checkout_cart_form,
+.edd-confirmation-template #edd_purchase_receipt thead th:first-child, 
+.edd-confirmation-template #edd_purchase_receipt tbody td:first-child,
+.edd-confirmation-template #edd_purchase_receipt thead th:last-child, 
+.edd-confirmation-template #edd_purchase_receipt tbody td:last-child,
+#edd_purchase_receipt_products tbody td {
+	border: 1px solid #E1E6F0;
+}
+#edd_purchase_receipt_products th { 
+	border-bottom: 1px solid #E1E6F0; 
+}
+#edd_checkout_cart td, 
+#edd_checkout_cart th {
+	border-color: #E1E6F0; 
+}
+
+
+/*--------------------------------------------------------------
 Reset
 --------------------------------------------------------------*/
 html, body, div, span, applet, object, iframe,
@@ -37,10 +164,6 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	box-sizing:         border-box;
 	-ms-word-wrap:	break-word;
 	word-wrap:		break-word;
-}
-body {
-	background: #F2F3F5;
-	color: #8F9EB8;
 }
 .header-area,
 .main-content-area {
@@ -75,7 +198,6 @@ q:before, q:after {
 	content: "";
 }
 blockquote, q {
-	color: #8F9EB8;
 	font-style: italic;
 	quotes: "" "";
 }
@@ -156,7 +278,6 @@ address {
 	margin: 0 0 1.5em;
 }
 pre {
-	background: #F2F3F5;
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 13px;
 	line-height: 1.6;
@@ -168,7 +289,6 @@ pre {
 }
 code, kbd, tt, var {
 	font: 16px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-	color: #8F9EB8;
 }
 abbr, acronym {
 	border-bottom: 1px dotted #666;
@@ -230,7 +350,6 @@ dt {
 }
 dd {
 	margin: 1.5em;
-	border-left: 3px solid #F2F3F5;
 	padding-left: 16px;
 	padding: 0 0 0 16px;
 }
@@ -262,7 +381,6 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-	border: 2px solid #E1E6F0;
 	padding: 8px;
 }
 #secondary .widget input[type="text"],
@@ -281,7 +399,6 @@ textarea {
 }
 input[type="submit"],
 input[type="button"] {
-	background: #2980B9;
 	color: #fff;
 	padding: 8px;
 	border: none;
@@ -296,7 +413,6 @@ input[type="button"]:hover {
 Links
 --------------------------------------------------------------*/
 a {
-	color: #3498DB;
 	text-decoration: none;
 }
 a:hover {
@@ -312,7 +428,6 @@ Menus
 .main-navigation {
 	clear: both;
 	display: block;
-	background: #2980B9;
 	color: #fff;
 	padding-left: 12px;
 	border-radius: 3px;
@@ -348,14 +463,7 @@ Menus
 	border-radius: 0 0 3px 3px;
 }
 .header-menu a {
-	color: #8F9EB8;
 	font-size: 13px;
-}
-.main-navigation a:hover {
-	background: #3498DB;
-}
-.header-menu a:hover {
-	color: #3498DB;
 }
 .skip-link.screen-reader-text {
 	padding: 0;
@@ -389,7 +497,6 @@ Menus
 }
 .main-navigation ul li:hover > ul {
 	display: block;
-	background: #2980B9;
 }
 .main-navigation .current_page_item a,
 .main-navigation .current-menu-item a {
@@ -408,11 +515,6 @@ Menus
 }
 .store-pagination {
 	text-align: center;
-}
-.navigation a,
-.store-pagination a,
-.comment-navigation a {
-	color: #8F9EB8;
 }
 .store-pagination .page-numbers {
 	padding: 0 4px;
@@ -575,7 +677,6 @@ Content
 	min-height: 300px
 }
 .page-title {
-	color: #8F9EB8;
 	font-size: 22px;
 }
 .sticky {
@@ -598,10 +699,8 @@ Content
 .post-navigation,
 .comment-navigation,
 .store-pagination {
-	color: #8F9EB8;
 	font-size: 13px;
 	padding: 10px 0;
-	border: 1px solid #F2F3F5;
 	border-width: 1px 0;
 }
 .byline {
@@ -625,13 +724,11 @@ footer.entry-meta {
 	padding: 0;
 }
 .single-post-footer {
-	background: #F2F3F5;
 	padding: 32px;
 	border-radius: 3px;
 }
 .post-footer-author {
 	position: relative;
-	border: 1px solid #E1E6F0;
 	border-width: 1px 0;
 }
 .post-footer-author-bio {
@@ -654,7 +751,6 @@ footer.entry-meta {
 		right: 0;
 }
 .social-links a {
-	color: #8F9EB8;
 	margin-left: 6px;
 }
 .social-links a:hover {
@@ -665,13 +761,11 @@ footer.entry-meta {
 Post Formats
 --------------------------------------------------------------*/
 article.format-aside {
-	background: #F2F3F5;
 	padding: 32px;
 	border-radius: 3px;
 }
 article.format-aside .aside-meta,
 article.format-aside .entry-header .entry-meta {
-	color: #8F9EB8;
 	font-size: 13px;
 	padding: 0;
 	border: none;
@@ -689,15 +783,11 @@ article.format-aside .comments-link {
 article.format-link .entry-content a {
 	font-size: 130%;
 }
-article.format-chat p:nth-child(even) {
-	color: #8F9EB8;
-}
 
 /*--------------------------------------------------------------
 Comments
 --------------------------------------------------------------*/
 .response-title {
-	color: #8F9EB8;
 	font-style: italic;
 }
 .comment-content a {
@@ -707,9 +797,7 @@ Comments
 }
 .comment-meta {
 	position: relative;
-	color: #8F9EB8;
 	font-size: 13px;
-	border: 1px solid #F2F3F5;
 	border-width: 1px 0;
 	margin-bottom: 1.5em;
 }
@@ -749,7 +837,6 @@ Comments
 Sidebar
 --------------------------------------------------------------*/
 #secondary aside {
-	background: #F2F3F5;
 	padding: 32px;
 	border-radius: 3px;
 }
@@ -797,38 +884,12 @@ Sidebar
 Footer
 --------------------------------------------------------------*/
 .site-footer {
-	color: #8F9EB8;
 	font-size: 13px;
 }
 
 /*--------------------------------------------------------------
 Easy Digital Downloads
 --------------------------------------------------------------*/
-#secondary .edd_download_purchase_form,
-.threecol.product,
-#edd_checkout_cart .edd_cart_header_row th,
-#edd_checkout_form_wrap #edd-discount-code-wrap, 
-#edd_checkout_form_wrap #edd-login-account-wrap, 
-#edd_checkout_form_wrap #edd-new-account-wrap, 
-#edd_checkout_form_wrap #edd_final_total_wrap, 
-#edd_checkout_form_wrap #edd_show_discount,
-.edd-confirmation-template #edd_purchase_receipt thead th:first-child, 
-.edd-confirmation-template #edd_purchase_receipt tbody td:first-child, 
-#edd_purchase_receipt_products th,
-#edd_profile_editor_form,
-#edd_checkout_form_wrap fieldset:not(#edd_purchase_submit),
-#edd_login_form {
-	background: #F2F3F5;
-}
-#edd_checkout_form_wrap #edd-discount-code-wrap, 
-#edd_checkout_form_wrap #edd-login-account-wrap, 
-#edd_checkout_form_wrap #edd-new-account-wrap, 
-#edd_checkout_form_wrap #edd_final_total_wrap, 
-#edd_checkout_form_wrap #edd_show_discount,
-#edd_checkout_form_wrap fieldset,
-#edd_login_form {
-	border: 2px solid #E1E6F0; 
-}
 #secondary .edd_download_purchase_form {
 	padding: 32px;
 	border-radius: 3px;
@@ -856,9 +917,6 @@ Easy Digital Downloads
 }
 .product-title {
 	color: #404040;
-}
-.product-title:hover  {
-	color: #3498DB;
 }
 .product-title h3 {
 	font-size: 22px;
@@ -927,12 +985,7 @@ input[type=submit].edd-submit {
 	font-size: 13px;
 	margin-top: 3px;
 }
-#edd_checkout_cart td, 
-#edd_checkout_cart th {
-	border-color: #E1E6F0; 
-}
 #edd_checkout_cart_form {
-	border: 1px solid #E1E6F0;
 	margin-bottom: 1.5em;
 }
 #edd_checkout_cart {
@@ -957,13 +1010,11 @@ input[type=submit].edd-submit {
 }
 #edd_purchase_receipt,
 #edd_user_history { 
-	border: 2px solid #E1E6F0; 
 	margin-bottom: 2em; 
 }
 .edd-confirmation-template #edd_purchase_receipt thead th:first-child, 
 .edd-confirmation-template #edd_purchase_receipt tbody td:first-child { 
 	padding: 15px 10px; 
-	border: 1px solid #E1E6F0; 
 	border-width: 0 1px 0 0; 
 }
 .edd-confirmation-template #edd_purchase_receipt thead th:first-child,
@@ -973,30 +1024,25 @@ input[type=submit].edd-submit {
 .edd-confirmation-template #edd_purchase_receipt thead th:last-child, 
 .edd-confirmation-template #edd_purchase_receipt tbody td:last-child { 
 	padding: 15px 10px; 
-	border: 1px solid #E1E6F0;
 	border-width: 0 0 1px; 
 }
 .edd-confirmation-template #edd_purchase_receipt tbody tr:last-child td:last-child {
 	border-bottom-width: 0;
 }
 #edd_purchase_receipt_products { 
-	border: 2px solid #E1E6F0; 
 	margin-bottom: 3em; 
 }
 #edd_purchase_receipt_products th { 
 	font-weight: bold; 
 	padding: 15px 10px; 
-	border-bottom: 1px solid #E1E6F0; 
 }
 #edd_purchase_receipt_products tbody td { 
-	border: 1px solid #E1E6F0; 
 	border-width: 0 0 1px; 
 }
 #edd_purchase_receipt_products td { 
 	padding: 15px 10px; 
 }
 #edd_profile_editor_form {
-	border: 2px solid #E1E6F0; 
 	padding: 16px;
 }
 #edd_profile_editor_form legend {
@@ -1040,8 +1086,6 @@ Media
 	padding: 0;
 }
 .wp-caption {
-	background: #F2F3F5;
-	border: 2px solid #E1E6F0;
 	margin-bottom: 1.5em;
 	max-width: 100%;
 }
@@ -1090,10 +1134,8 @@ Plugin support
 /* Jetpack */
 .entry-content div.sharedaddy div.sd-block,
 .entry-summary div.sharedaddy div.sd-block {
-	color: #8F9EB8;
 	font-size: 13px;
 	padding: 6px 0 0;
-	border: 1px solid #F2F3F5;
 	border-width: 1px 0 0;
 	margin: 1.5em 0;
 }
