@@ -13,6 +13,16 @@
 			<footer id="colophon" class="site-footer inner" role="contentinfo">
 				<span class="site-info">
 					<?php echo get_theme_mod( 'sdm_credits_copyright', '&copy; ' . date( 'Y' ) ); ?>
+			
+					<?php
+						$credits = __( 'Built with WordPress & <a href="' . SDM_HOME . '">Presentation for Easy Digital Downloads</a>', 'quota' );
+						// If copyright & credits are left empty or have not been set, display default info.
+						if ( '' == get_theme_mod( 'sdm_credits_copyright' ) ) :
+							echo $credits;
+						else :
+							echo get_theme_mod( 'sdm_credits_copyright', $credits );
+						endif;
+					?>
 				</span>
 			</footer>
 		</div>
