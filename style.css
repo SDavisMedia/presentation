@@ -722,7 +722,8 @@ Content
 	padding: 10px 0;
 	border-width: 1px 0;
 }
-.byline {
+.byline,
+.posted-on {
 	margin-right: 2em;
 }
 .featured-img {
@@ -1271,6 +1272,10 @@ Responsive
 	.entry-title,
 	.store-title {
 		font-size: 24px;
+	}
+	.comments-link {
+		display: inline-block;
+		float: none;
 	}
 	.threecol.product {
 		float: none;
