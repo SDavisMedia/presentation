@@ -682,6 +682,10 @@ Comments
 	border-width: 1px 0;
 	margin-bottom: 1.5em;
 }
+.pingback {
+	position: relative;
+	font-size: 13px;
+}
 .comment-author .avatar {
 	border-radius: 50%;
 	margin: 6px 6px 6px 0;
@@ -712,6 +716,12 @@ Comments
 .comment-navigation {
 	padding: 0;
 	border: none;
+}
+.no-comments { /* comments closed */
+	font-size: 13px;
+	background: #FFFFE0;
+	padding: 5px 10px;
+	text-align: center;
 }
 
 /*--------------------------------------------------------------
