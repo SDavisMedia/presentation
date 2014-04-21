@@ -56,7 +56,7 @@ function presentation_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'presentation_stylesheet', array( 'default' => 'blue' ) );
 	$wp_customize->add_control( 'presentation_stylesheet', array(
 		'type' => 'select',
-		'label' => 'Choose a color scheme:',
+		'label' => __( 'Choose a color scheme:', 'presentation' ),
 		'section' => 'presentation_style_section',
 		'choices' => array(
 			'blue'		=> 'Blue',
