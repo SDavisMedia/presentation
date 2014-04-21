@@ -46,6 +46,31 @@ function presentation_customize_register( $wp_customize ) {
 
 
 	/** ===============
+	 * Presentation Design Options
+	 */
+	$wp_customize->add_section( 'presentation_style_section', array(
+    	'title'       	=> __( 'Design Options', 'presentation' ),
+		'description' 	=> __( 'Choose a color scheme for Presentation. Individual styles can be overwritten in your child theme stylesheet.', 'presentation' ),
+		'priority'   	=> 25,
+	) );
+	$wp_customize->add_setting( 'presentation_stylesheet', array( 'default' => 'blue' ) );
+	$wp_customize->add_control( 'presentation_stylesheet', array(
+		'type' => 'select',
+		'label' => 'Choose a color scheme:',
+		'section' => 'presentation_style_section',
+		'choices' => array(
+			'blue'		=> 'Blue',
+			'turquoise'	=> 'Turquoise',
+			'purple'	=> 'Purple',
+			'midnight'	=> 'Midnight',
+			'orange'	=> 'Orange',
+			'red'		=> 'Red',
+			'gray'		=> 'Gray'
+	) ) );
+	
+
+
+	/** ===============
 	 * Content Options
 	 */
 	$wp_customize->add_section( 'presentation_content_section', array(

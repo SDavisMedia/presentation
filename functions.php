@@ -83,8 +83,29 @@ add_action( 'widgets_init', 'presentation_widgets_init' );
 function presentation_scripts() {
 	// main stylesheet
 	wp_enqueue_style( 'presentation-style', get_stylesheet_uri() );
+	
+	// color stylesheet
+	if ( get_theme_mod( 'presentation_stylesheet' ) == 'blue' ) :
+		wp_enqueue_style( 'presentation-design', get_template_directory_uri() . '/inc/css/blue.css' );
+	elseif ( get_theme_mod( 'presentation_stylesheet' ) ==  'turquoise' ) :
+		wp_enqueue_style( 'presentation-design', get_template_directory_uri() . '/inc/css/turquoise.css' );
+	elseif ( get_theme_mod( 'presentation_stylesheet' ) ==  'purple' ) :
+		wp_enqueue_style( 'presentation-design', get_template_directory_uri() . '/inc/css/purple.css' );
+	elseif ( get_theme_mod( 'presentation_stylesheet' ) ==  'midnight' ) :
+		wp_enqueue_style( 'presentation-design', get_template_directory_uri() . '/inc/css/midnight.css' );
+	elseif ( get_theme_mod( 'presentation_stylesheet' ) ==  'orange' ) :
+		wp_enqueue_style( 'presentation-design', get_template_directory_uri() . '/inc/css/orange.css' );
+	elseif ( get_theme_mod( 'presentation_stylesheet' ) ==  'red' ) :
+		wp_enqueue_style( 'presentation-design', get_template_directory_uri() . '/inc/css/red.css' );
+	elseif ( get_theme_mod( 'presentation_stylesheet' ) ==  'gray' ) :
+		wp_enqueue_style( 'presentation-design', get_template_directory_uri() . '/inc/css/gray.css' );
+	else :
+		wp_enqueue_style( 'presentation-design', get_template_directory_uri() . '/inc/css/blue.css' );
+	endif;
+	
 	// font awesome
 	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/inc/fonts/font-awesome/css/font-awesome.min.css' );
+	
 	// navigation toggle
 	wp_enqueue_script( 'presentation-navigation', get_template_directory_uri() . '/inc/js/navigation.js', array(), '20120206', true );
 	
