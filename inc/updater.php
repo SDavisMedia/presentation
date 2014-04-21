@@ -3,10 +3,10 @@
  * theme licensing with Easy Digital Downloads and the Software
  * Licensing extension: 
  *
- * https://easydigitaldownloads.com/extensions/software-licensing
+ * http://buildwpyourself.com/edd-software-licensing
  */
 
-define( 'PRESENTATION_SL_STORE_URL', 'https://easydigitaldownloads.com' );
+define( 'PRESENTATION_SL_STORE_URL', 'http://buildwpyourself.com' );
 define( 'PRESENTATION_DOWNLOAD_TITLE', 'Presentation' );
 
 

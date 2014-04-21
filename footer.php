@@ -15,7 +15,7 @@
 					<?php echo get_theme_mod( 'presentation_credits_copyright', '&copy; ' . date( 'Y' ) ); ?>
 			
 					<?php
-						$credits = __( 'Built with WordPress & <a href="' . PRESENTATION_HOME . '">' . PRESENTATION_NAME . ' for Easy Digital Downloads</a>', 'quota' );
+						$credits = __( 'Built with WordPress & <a href="' . PRESENTATION_HOME . '">' . PRESENTATION_NAME . '</a>', 'quota' );
 						// If copyright & credits are left empty or have not been set, display default info.
 						if ( '' == get_theme_mod( 'presentation_credits_copyright' ) ) :
 							echo $credits;

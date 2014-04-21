@@ -9,7 +9,7 @@
 define( 'PRESENTATION_NAME', 'Presentation' );
 define( 'PRESENTATION_VERSION', '1.0' );
 define( 'PRESENTATION_AUTHOR', 'Sean Davis' );
-define( 'PRESENTATION_HOME', 'https://easydigitaldownloads.com/' );
+define( 'PRESENTATION_HOME', 'http://buildwpyourself.com/downloads/presentation/' );
 
 
 if ( ! function_exists( 'presentation_setup' ) ) :
