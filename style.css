@@ -352,7 +352,7 @@ Menus
 	float: left;
 	left: 0;
 	position: absolute;
-		top: 48px;
+		top: 49px;
 	z-index: 99999;
 	border-radius: 0 0 3px 3px;
 }
@@ -893,21 +893,21 @@ input[type=submit].edd-submit {
 #edd_user_history { 
 	margin-bottom: 2em; 
 }
-.edd-confirmation-template #edd_purchase_receipt thead th:first-child, 
-.edd-confirmation-template #edd_purchase_receipt tbody td:first-child { 
+.edd-confirmation-template .entry-content #edd_purchase_receipt thead th:first-child, 
+.edd-confirmation-template .entry-content #edd_purchase_receipt tbody td:first-child { 
 	padding: 15px 10px; 
 	border-width: 0 1px 0 0; 
 }
-.edd-confirmation-template #edd_purchase_receipt thead th:first-child,
-.edd-confirmation-template #edd_purchase_receipt tbody tr:not(:last-child) td:first-child {
+.edd-confirmation-template .entry-content #edd_purchase_receipt thead th:first-child,
+.edd-confirmation-template .entry-content #edd_purchase_receipt tbody tr:not(:last-child) td:first-child {
 	border-bottom-width: 1px;
 }
-.edd-confirmation-template #edd_purchase_receipt thead th:last-child, 
-.edd-confirmation-template #edd_purchase_receipt tbody td:last-child { 
+.edd-confirmation-template .entry-content #edd_purchase_receipt thead th:last-child, 
+.edd-confirmation-template .entry-content #edd_purchase_receipt tbody td:last-child { 
 	padding: 15px 10px; 
 	border-width: 0 0 1px; 
 }
-.edd-confirmation-template #edd_purchase_receipt tbody tr:last-child td:last-child {
+.edd-confirmation-template .entry-content #edd_purchase_receipt tbody tr:last-child td:last-child {
 	border-bottom-width: 0;
 }
 #edd_purchase_receipt_products { 
@@ -917,7 +917,7 @@ input[type=submit].edd-submit {
 	font-weight: bold; 
 	padding: 15px 10px; 
 }
-#edd_purchase_receipt_products tbody td { 
+.entry-content #edd_purchase_receipt_products tbody td { 
 	border-width: 0 0 1px; 
 }
 #edd_purchase_receipt_products td { 
@@ -1017,8 +1017,8 @@ object {
 Plugin support
 --------------------------------------------------------------*/
 /* Jetpack */
-.entry-content div.sharedaddy div.sd-block,
-.entry-summary div.sharedaddy div.sd-block {
+.content-area .entry-content div.sharedaddy div.sd-block,
+.content-area .entry-summary div.sharedaddy div.sd-block {
 	font-size: 13px;
 	padding: 6px 0 0;
 	border-width: 1px 0 0;
