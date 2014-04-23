@@ -81,6 +81,10 @@ article.format-aside,
 #edd_profile_editor_form,
 #edd_checkout_form_wrap fieldset:not(#edd_purchase_submit),
 #edd_login_form,
+#bbpress-forums li.bbp-header, 
+#bbpress-forums li.bbp-footer,
+#bbpress-forums .quicktags-toolbar,
+#bbpress-forums div.bbp-reply-header,
 .wp-caption {
 	background: #EBEEF1;
 }
@@ -119,6 +123,8 @@ dd {
 	#edd_user_history,
 	#edd_purchase_receipt_products,
 	#edd_profile_editor_form,
+	#bbpress-forums fieldset.bbp-form,
+	#bbpress-forums div.wp-editor-container,
 	.wp-caption {
 		border: 2px solid #DFE5EB;
 	}
@@ -128,10 +134,22 @@ dd {
 	.edd-confirmation-template #edd_purchase_receipt tbody td:first-child,
 	.edd-confirmation-template #edd_purchase_receipt thead th:last-child, 
 	.edd-confirmation-template #edd_purchase_receipt tbody td:last-child,
-	#edd_purchase_receipt_products tbody td {
+	#edd_purchase_receipt_products tbody td,
+	#bbpress-forums li.bbp-body ul.forum,
+	#bbpress-forums li.bbp-body ul.topic,
+	#bbpress-forums ul.bbp-lead-topic,
+	#bbpress-forums ul.bbp-topics,
+	#bbpress-forums ul.bbp-forums,
+	#bbpress-forums ul.bbp-replies,
+	#bbpress-forums ul.bbp-search-results,
+	#bbpress-forums li.bbp-header,
+	#bbpress-forums li.bbp-footer,
+	.single-topic #bbpress-forums li.bbp-body {
 		border: 1px solid #DFE5EB;
 	}
-	#edd_purchase_receipt_products th { 
+	#edd_purchase_receipt_products th,
+	#bbpress-forums .quicktags-toolbar,
+	#bbpress-forums div.bbp-reply-header { 
 		border-bottom: 1px solid #DFE5EB; 
 	}
 	#edd_checkout_cart td, 

@@ -60,20 +60,32 @@ add_action( 'after_setup_theme', 'presentation_setup' );
 function presentation_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Primary Sidebar', 'presentation' ),
-		'id'            => 'sidebar-1',
+		'id'            => 'sidebar-main',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h5 class="widget-title">',
 		'after_title'   => '</h5>',
 	) );
-	register_sidebar( array(
-		'name'          => __( 'EDD Sidebar', 'presentation' ),
-		'id'            => 'sidebar-edd',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h5 class="widget-title">',
-		'after_title'   => '</h5>',
-	) );
+	if ( class_exists( 'Easy_Digital_Downloads' ) ) :
+		register_sidebar( array(
+			'name'          => __( 'EDD Sidebar', 'presentation' ),
+			'id'            => 'sidebar-edd',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h5 class="widget-title">',
+			'after_title'   => '</h5>',
+		) );
+	endif;
+	if ( class_exists( 'bbPress' ) ) :
+		register_sidebar( array(
+			'name'          => __( 'bbPress Sidebar', 'presentation' ),
+			'id'            => 'sidebar-bbpress',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h5 class="widget-title">',
+			'after_title'   => '</h5>',
+		) );
+	endif;
 }
 add_action( 'widgets_init', 'presentation_widgets_init' );
 
@@ -175,7 +187,7 @@ add_filter( 'post_class', 'presentation_first_post_class' );
  * Only show regular posts in search results
  */
 function presentation_search_filter( $query ) {
-	if ( $query->is_search && !is_admin )
+	if ( $query->is_search && !is_admin && !is_bbpress() )
 		$query->set( 'post_type', 'post' );
 	return $query;
 }

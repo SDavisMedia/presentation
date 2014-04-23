@@ -7,10 +7,15 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  */
+if ( class_exists( 'bbPress' ) && is_bbpress() && 1 == get_theme_mod( 'presentation_bbpress_full_width' ) ) :
+	$bbpress_fw = 'bbpress-content';
+else :
+	$bbpress_fw = 'content-area';
+endif; 
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="<?php echo $bbpress_fw; ?>">
 		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -33,5 +38,13 @@ get_header(); ?>
 		</main>
 	</div>
 
-<?php get_sidebar(); ?>
+<?php 
+	if ( class_exists( 'bbPress' ) && is_bbpress() ) :
+		if ( 1 != get_theme_mod( 'presentation_bbpress_full_width' ) ) :
+			get_sidebar( 'bbpress' );
+		endif;
+	else :
+		get_sidebar();
+	endif;
+?>
 <?php get_footer(); ?>

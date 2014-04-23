@@ -21,6 +21,6 @@
 		<?php if ( is_active_sidebar( 'sidebar-edd' ) ) : ?>
 			<?php dynamic_sidebar( 'sidebar-edd' ); ?>
 		<?php else : ?>
-			<?php dynamic_sidebar( 'sidebar-1' ); ?>
+			<?php dynamic_sidebar( 'sidebar-main' ); ?>
 		<?php endif; ?>
 	</div>

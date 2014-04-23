@@ -66,8 +66,7 @@ function presentation_customize_register( $wp_customize ) {
 			'orange'	=> 'Orange',
 			'red'		=> 'Red',
 			'gray'		=> 'Gray'
-	) ) );
-	
+	) ) );	
 
 
 	/** ===============
@@ -173,6 +172,27 @@ function presentation_customize_register( $wp_customize ) {
 		'settings'	=> 'presentation_linkedin',
 		'priority'	=> 110,
 	) );
+	
+
+	/** ===============
+	 * bbPress Options
+	 */
+	// only if bbPress is activated
+	if ( class_exists( 'bbPress' ) ) {
+		$wp_customize->add_section( 'presentation_bbpress_options', array(
+	    	'title'       	=> __( 'bbPress Options', 'presentation' ),
+			'description' 	=> __( 'These options are specific to all pages that display bbPress forums and its components.', 'presentation' ),
+			'priority'   	=> 25,
+		) );
+		// full-width forums?
+		$wp_customize->add_setting( 'presentation_bbpress_full_width', array( 'default' => 1 ) );
+		$wp_customize->add_control( 'presentation_bbpress_full_width', array(
+			'label'		=> __( 'Remove sidebar & display full-width?', 'presentation' ),
+			'section'	=> 'presentation_bbpress_options',
+			'priority'	=> 10,
+			'type'      => 'checkbox',
+		) );
+	}	
 	
 	
 	/** ===============

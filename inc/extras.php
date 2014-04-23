@@ -38,7 +38,11 @@ function presentation_body_classes( $classes ) {
 	elseif ( is_page_template( 'edd_templates/edd-members.php' ) ) :		
 		$classes[] = 'edd-members-template';
 	elseif ( is_page_template( 'edd_templates/edd-failed.php' ) ) :		
-		$classes[] = 'edd-failed-template';				
+		$classes[] = 'edd-failed-template';
+	endif;
+	
+	if ( class_exists( 'bbPress' ) && is_bbpress() && 1 == get_theme_mod( 'presentation_bbpress_full_width' ) ) :
+		$classes[] = 'no-sidebar';
 	endif;
 
 	return $classes;
