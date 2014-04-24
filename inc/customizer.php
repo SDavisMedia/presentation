@@ -53,7 +53,10 @@ function presentation_customize_register( $wp_customize ) {
 		'description' 	=> __( 'Choose a color scheme for Presentation. Individual styles can be overwritten in your child theme stylesheet.', 'presentation' ),
 		'priority'   	=> 25,
 	) );
-	$wp_customize->add_setting( 'presentation_stylesheet', array( 'default' => 'blue' ) );
+	$wp_customize->add_setting( 'presentation_stylesheet', array( 
+		'default' => 'blue', 
+		'sanitize_callback' => 'presentation_sanitize_stylesheet' 
+	) );
 	$wp_customize->add_control( 'presentation_stylesheet', array(
 		'type' => 'select',
 		'label' => __( 'Choose a color scheme:', 'presentation' ),
@@ -78,7 +81,10 @@ function presentation_customize_register( $wp_customize ) {
 		'priority'   	=> 20,
 	) );
 	// post content
-	$wp_customize->add_setting( 'presentation_post_content', array( 'default' => 'full_content' ) );
+	$wp_customize->add_setting( 'presentation_post_content', array( 
+		'default' => 'full_content',
+		'sanitize_callback' => 'presentation_sanitize_radio'  
+	) );
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'presentation_post_content', array(
 		'label'		=> __( 'Post Feed Content', 'presentation' ),
 		'section'	=> 'presentation_content_section',
@@ -92,7 +98,10 @@ function presentation_customize_register( $wp_customize ) {
 	) ) );
 	// read more link
 	$wp_customize->get_setting( 'presentation_read_more' )->transport = 'postMessage';
-	$wp_customize->add_setting( 'presentation_read_more', array( 'default' => __( 'Read More &rarr;', 'presentation' ) ) );		
+	$wp_customize->add_setting( 'presentation_read_more', array( 
+		'default' => __( 'Read More &rarr;', 'presentation' ),
+		'sanitize_callback' => 'presentation_sanitize_text' 
+	) );		
 	$wp_customize->add_control( 'presentation_read_more', array(
 	    'label' 	=> __( 'Excerpt & More Link Text', 'presentation' ),
 	    'section' 	=> 'presentation_content_section',
@@ -100,7 +109,10 @@ function presentation_customize_register( $wp_customize ) {
 		'priority'	=> 20,
 	) );
 	// show featured images on feed?
-	$wp_customize->add_setting( 'presentation_featured_image', array( 'default' => 1 ) );
+	$wp_customize->add_setting( 'presentation_featured_image', array( 
+		'default' => 1,
+		'sanitize_callback' => 'presentation_sanitize_checkbox'  
+	) );
 	$wp_customize->add_control( 'presentation_featured_image', array(
 		'label'		=> __( 'Show Featured Images in post listings?', 'presentation' ),
 		'section'	=> 'presentation_content_section',
@@ -108,7 +120,10 @@ function presentation_customize_register( $wp_customize ) {
 		'type'      => 'checkbox',
 	) );
 	// show featured images on posts?
-	$wp_customize->add_setting( 'presentation_single_featured_image', array( 'default' => 1 ) );
+	$wp_customize->add_setting( 'presentation_single_featured_image', array( 
+		'default' => 1,
+		'sanitize_callback' => 'presentation_sanitize_checkbox'  
+	) );
 	$wp_customize->add_control( 'presentation_single_featured_image', array(
 		'label'		=> __( 'Show Featured Images on Single Posts?', 'presentation' ),
 		'section'	=> 'presentation_content_section',
@@ -116,7 +131,10 @@ function presentation_customize_register( $wp_customize ) {
 		'type'      => 'checkbox',
 	) );
 	// show single post footer?
-	$wp_customize->add_setting( 'presentation_post_footer', array( 'default' => 1 ) );
+	$wp_customize->add_setting( 'presentation_post_footer', array( 
+		'default' => 1,
+		'sanitize_callback' => 'presentation_sanitize_checkbox'  
+	) );
 	$wp_customize->add_control( 'presentation_post_footer', array(
 		'label'		=> __( 'Show Post Footer on Single Posts?', 'presentation' ),
 		'section'	=> 'presentation_content_section',
@@ -124,7 +142,10 @@ function presentation_customize_register( $wp_customize ) {
 		'type'      => 'checkbox',
 	) );
 	// comments on pages?
-	$wp_customize->add_setting( 'presentation_page_comments', array( 'default' => 0 ) );
+	$wp_customize->add_setting( 'presentation_page_comments', array( 
+		'default' => 0,
+		'sanitize_callback' => 'presentation_sanitize_checkbox'  
+	) );
 	$wp_customize->add_control( 'presentation_page_comments', array(
 		'label'		=> __( 'Display Comments on Standard Pages?', 'presentation' ),
 		'section'	=> 'presentation_content_section',
@@ -133,7 +154,10 @@ function presentation_customize_register( $wp_customize ) {
 	) );
 	// credits & copyright
 	$wp_customize->get_setting( 'presentation_credits_copyright' )->transport = 'postMessage';
-	$wp_customize->add_setting( 'presentation_credits_copyright', array( 'default' => null ) );
+	$wp_customize->add_setting( 'presentation_credits_copyright', array( 
+		'default' => null,
+		'sanitize_callback' => 'presentation_sanitize_text' 
+	) );
 	$wp_customize->add_control( 'presentation_credits_copyright', array(
 		'label'		=> __( 'Footer Credits & Copyright', 'presentation' ),
 		'section'	=> 'presentation_content_section',
@@ -141,7 +165,10 @@ function presentation_customize_register( $wp_customize ) {
 		'priority'	=> 70,
 	) );
 	// twitter url
-	$wp_customize->add_setting( 'presentation_twitter', array( 'default' => null ) );
+	$wp_customize->add_setting( 'presentation_twitter', array( 
+		'default' => null,
+		'sanitize_callback' => 'presentation_sanitize_text' 
+	) );
 	$wp_customize->add_control( 'presentation_twitter', array(
 		'label'		=> __( 'Twitter Profile URL', 'presentation' ),
 		'section'	=> 'presentation_content_section',
@@ -149,7 +176,10 @@ function presentation_customize_register( $wp_customize ) {
 		'priority'	=> 80,
 	) );
 	// facebook url
-	$wp_customize->add_setting( 'presentation_facebook', array( 'default' => null ) );
+	$wp_customize->add_setting( 'presentation_facebook', array( 
+		'default' => null,
+		'sanitize_callback' => 'presentation_sanitize_text' 
+	) );
 	$wp_customize->add_control( 'presentation_facebook', array(
 		'label'		=> __( 'Facebook Profile URL', 'presentation' ),
 		'section'	=> 'presentation_content_section',
@@ -157,7 +187,10 @@ function presentation_customize_register( $wp_customize ) {
 		'priority'	=> 90,
 	) );
 	// google plus url
-	$wp_customize->add_setting( 'presentation_gplus', array( 'default' => null ) );
+	$wp_customize->add_setting( 'presentation_gplus', array( 
+		'default' => null,
+		'sanitize_callback' => 'presentation_sanitize_text' 
+	) );
 	$wp_customize->add_control( 'presentation_gplus', array(
 		'label'		=> __( 'Google Plus Profile URL', 'presentation' ),
 		'section'	=> 'presentation_content_section',
@@ -165,7 +198,10 @@ function presentation_customize_register( $wp_customize ) {
 		'priority'	=> 100,
 	) );
 	// linkedin url
-	$wp_customize->add_setting( 'presentation_linkedin', array( 'default' => null ) );
+	$wp_customize->add_setting( 'presentation_linkedin', array( 
+		'default' => null,
+		'sanitize_callback' => 'presentation_sanitize_text' 
+	) );
 	$wp_customize->add_control( 'presentation_linkedin', array(
 		'label'		=> __( 'LinkedIn Profile URL', 'presentation' ),
 		'section'	=> 'presentation_content_section',
@@ -185,7 +221,10 @@ function presentation_customize_register( $wp_customize ) {
 			'priority'   	=> 25,
 		) );
 		// full-width forums?
-		$wp_customize->add_setting( 'presentation_bbpress_full_width', array( 'default' => 1 ) );
+		$wp_customize->add_setting( 'presentation_bbpress_full_width', array( 
+			'default' => 1,
+			'sanitize_callback' => 'presentation_sanitize_checkbox'  
+		) );
 		$wp_customize->add_control( 'presentation_bbpress_full_width', array(
 			'label'		=> __( 'Remove sidebar & display full-width?', 'presentation' ),
 			'section'	=> 'presentation_bbpress_options',
@@ -206,7 +245,10 @@ function presentation_customize_register( $wp_customize ) {
 			'priority'   	=> 30,
 		) );
 		// show comments on downloads?
-		$wp_customize->add_setting( 'presentation_download_comments', array( 'default' => 0 ) );
+		$wp_customize->add_setting( 'presentation_download_comments', array( 
+			'default' => 0,
+			'sanitize_callback' => 'presentation_sanitize_checkbox'  
+		) );
 		$wp_customize->add_control( 'presentation_download_comments', array(
 			'label'		=> __( 'Comments on Downloads?', 'presentation' ),
 			'section'	=> 'presentation_edd_options',
@@ -215,7 +257,10 @@ function presentation_customize_register( $wp_customize ) {
 		) );
 		// store front/downloads archive headline
 		$wp_customize->get_setting( 'presentation_edd_store_archives_title' )->transport = 'postMessage';
-		$wp_customize->add_setting( 'presentation_edd_store_archives_title', array( 'default' => null ) );
+		$wp_customize->add_setting( 'presentation_edd_store_archives_title', array( 
+			'default' => null,
+			'sanitize_callback' => 'presentation_sanitize_text' 
+		) );
 		$wp_customize->add_control( 'presentation_edd_store_archives_title', array(
 			'label'		=> __( 'Store Front Main Title', 'presentation' ),
 			'section'	=> 'presentation_edd_options',
@@ -231,7 +276,10 @@ function presentation_customize_register( $wp_customize ) {
 			'priority'	=> 30,
 		) ) );
 		// hide download description (excerpt)?
-		$wp_customize->add_setting( 'presentation_download_description', array( 'default' => 0 ) );
+		$wp_customize->add_setting( 'presentation_download_description', array(
+			'default' => 0,
+			'sanitize_callback' => 'presentation_sanitize_checkbox'  
+		) );
 		$wp_customize->add_control( 'presentation_download_description', array(
 			'label'		=> __( 'Hide Download Description', 'presentation' ),
 			'section'	=> 'presentation_edd_options',
@@ -240,7 +288,10 @@ function presentation_customize_register( $wp_customize ) {
 		) );
 		//  view details link
 		$wp_customize->get_setting( 'presentation_product_view_details' )->transport = 'postMessage';
-		$wp_customize->add_setting( 'presentation_product_view_details', array( 'default' => __( 'View Details', 'presentation' ) ) );
+		$wp_customize->add_setting( 'presentation_product_view_details', array( 
+			'default' => __( 'View Details', 'presentation' ),
+			'sanitize_callback' => 'presentation_sanitize_text' 
+		) );
 		$wp_customize->add_control( 'presentation_product_view_details', array(
 		    'label' 	=> __( 'Store Item Link Text', 'presentation' ),
 		    'section' 	=> 'presentation_edd_options',
@@ -274,6 +325,65 @@ function presentation_customize_register( $wp_customize ) {
 	$wp_customize->get_section( 'static_front_page' )->priority = 50;
 }
 add_action( 'customize_register', 'presentation_customize_register' );
+
+
+/** ===============
+ * Sanitize the theme design select option
+ */
+function presentation_sanitize_stylesheet( $input ) {
+    $valid = array(
+		'blue'		=> 'Blue',
+		'turquoise'	=> 'Turquoise',
+		'purple'	=> 'Purple',
+		'midnight'	=> 'Midnight',
+		'orange'	=> 'Orange',
+		'red'		=> 'Red',
+		'gray'		=> 'Gray'
+    );
+ 
+    if ( array_key_exists( $input, $valid ) ) {
+        return $input;
+    } else {
+        return '';
+    }
+}
+
+
+/** ===============
+ * Sanitize checkbox options
+ */
+function presentation_sanitize_checkbox( $input ) {
+    if ( $input == 1 ) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+
+/** ===============
+ * Sanitize radio options
+ */
+function presentation_sanitize_radio( $input ) {
+    $valid = array(
+		'excerpt'		=> 'Excerpt',
+		'full_content'	=> 'Full Content'
+    );
+ 
+    if ( array_key_exists( $input, $valid ) ) {
+        return $input;
+    } else {
+        return '';
+    }
+}
+
+
+/** ===============
+ * Sanitize text input
+ */
+function presentation_sanitize_text( $input ) {
+    return strip_tags( stripslashes( $input ) );
+}
 
 
 /** ===============
