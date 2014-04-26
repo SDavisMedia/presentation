@@ -2,6 +2,43 @@
 /**
  * Custom functions that act independently of the theme templates
  */
+ 
+/**
+ * social profiles
+ */
+function presentation_social_profiles() { 
+	if ( get_theme_mod( 'presentation_twitter' ) || get_theme_mod( 'presentation_facebook' ) || get_theme_mod( 'presentation_gplus' ) || get_theme_mod( 'presentation_linkedin' ) ) : ?>
+		<div class="social-links">
+			<?php
+			$social_profiles = array( 
+				'twitter'	=> array(
+					'icon' 		=> '<i class="fa fa-twitter-square"></i>',
+					'option'	=> esc_url( get_theme_mod( 'presentation_twitter' ) )
+				),
+				'facebook'	=> array(
+					'icon' 		=> '<i class="fa fa-facebook-square"></i>',
+					'option'	=> esc_url( get_theme_mod( 'presentation_facebook' ) )
+				),
+				'gplus'	=> array(
+					'icon' 		=> '<i class="fa fa-google-plus-square"></i>',
+					'option'	=> esc_url( get_theme_mod( 'presentation_gplus' ) )
+				),
+				'linkedin'	=> array(
+					'icon' 		=> '<i class="fa fa-linkedin-square"></i>',
+					'option'	=> esc_url( get_theme_mod( 'presentation_linkedin' ) )
+				),
+			);
+			foreach ( $social_profiles as $profile ) {
+				if ( '' != $profile[ 'option' ] ) :
+					echo '<a href="', $profile[ 'option' ], '">', $profile[ 'icon' ], '</a>'; 
+				endif;
+			}
+			?>
+		</div>
+	<?php 
+	endif; // end check for any social profile
+}
+add_action( 'presentation_social_profiles', 'presentation_social_profiles' ); 
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
