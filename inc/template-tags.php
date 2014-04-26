@@ -99,7 +99,7 @@ function presentation_posted_on() {
 		?>
 	</span>
 	<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-		<span class="comments-link"><i class="fa fa-comments"></i><?php comments_popup_link( __( 'Comments', '_s' ), __( '1 Comment', '_s' ), __( '% Comments', '_s' ) ); ?></span>
+		<span class="comments-link"><i class="fa fa-comments"></i><?php comments_popup_link( __( 'Comments', 'presentation' ), __( '1 Comment', 'presentation' ), __( '% Comments', 'presentation' ) ); ?></span>
 	<?php endif;
 }
 endif;
