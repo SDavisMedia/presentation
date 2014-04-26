@@ -46,9 +46,7 @@ function presentation_setup() {
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'presentation' ),
-	) );
-	register_nav_menus( array(
-		'header' => __( 'Header Menu (no drop-downs)', 'presentation' ),
+		'header' => __( 'Header Menu (no drop-downs)', 'presentation' )
 	) );
 
 	// Enable support for HTML5 markup.
