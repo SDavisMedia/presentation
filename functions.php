@@ -22,6 +22,9 @@ if ( ! function_exists( 'presentation_setup' ) ) :
  */
 function presentation_setup() {
 
+	// keep the media in check
+	if ( ! isset( $content_width ) ) $content_width = 690; 
+	
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
