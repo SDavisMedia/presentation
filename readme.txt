@@ -84,6 +84,7 @@ Copyright: Dave Gandy, http://fontawesome.io
 == Changelog ==
 
 = 1.1.2 =
+* Added: custom menu fallback for both theme menus
 * Added: theme and additional resource copyright 
 * Tweaked: nav menu register functions combined 
 * Tweaked: social profile links placed in custom function and hooked in place 
