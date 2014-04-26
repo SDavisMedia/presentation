@@ -151,6 +151,20 @@ require get_template_directory() . '/inc/updater.php';
 
 
 /** ===============
+ * fallback for empty nav menus
+ */
+function presentation_menu_home() { ?>
+	<div class="menu-testing-menu-container">
+		<ul class="menu nav-menu">
+			<li class="menu-item">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo get_bloginfo( 'description' ); ?>"><?php _e( 'Home', 'presentation' ); ?></a>
+			</li>
+		</ul>
+	</div>
+<?php }
+
+
+/** ===============
  * Adjust excerpt length
  */
 function presentation_custom_excerpt_length( $length ) {

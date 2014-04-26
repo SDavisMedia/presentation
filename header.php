@@ -43,7 +43,7 @@ $ping = get_bloginfo('pingback_url');
 						<?php endif; ?>
 					</span>
 					<nav id="header-navigation" class="header-menu" role="navigation">
-						<?php wp_nav_menu( array( 'theme_location' => 'header', 'fallback_cb' => '' ) ); ?>
+						<?php wp_nav_menu( array( 'theme_location' => 'header', 'fallback_cb' => 'presentation_menu_home' ) ); ?>
 					</nav>
 				</div>
 			</header>
@@ -52,7 +52,7 @@ $ping = get_bloginfo('pingback_url');
 					<span class="menu-toggle"><?php echo '<i class="fa fa-bars"></i> ' . __( 'Menu', 'presentation' ); ?></span>
 					<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'presentation' ); ?></a>
 		
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => '' ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => 'presentation_menu_home' ) ); ?>
 				</nav>
 			</div>
 		</div>
