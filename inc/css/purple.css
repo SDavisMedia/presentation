@@ -84,10 +84,10 @@ article.format-aside,
 #bbpress-forums .quicktags-toolbar,
 #bbpress-forums div.bbp-reply-header,
 .wp-caption {
-	background: #F1EEF1;
+	background: #F6F3F6;
 }
 dd {
-	border-left: 3px solid #F1EEF1;
+	border-left: 3px solid #F6F3F6;
 }
 .entry-meta,
 .paging-navigation,
@@ -97,7 +97,7 @@ dd {
 .comment-meta,
 .entry-content div.sharedaddy div.sd-block,
 .entry-summary div.sharedaddy div.sd-block {
-	border: 1px solid #F1EEF1;
+	border: 1px solid #F6F3F6;
 }
 
 
