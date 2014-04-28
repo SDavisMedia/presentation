@@ -202,7 +202,7 @@ add_filter( 'post_class', 'presentation_first_post_class' );
  * Only show regular posts in search results
  */
 function presentation_search_filter( $query ) {
-	if ( $query->is_search && !is_admin && !is_bbpress() )
+	if ( $query->is_search && !is_admin() && !is_bbpress() )
 		$query->set( 'post_type', 'post' );
 	return $query;
 }
