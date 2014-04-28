@@ -299,7 +299,10 @@ function presentation_customize_register( $wp_customize ) {
 			'priority'	=> 50,
 		) );
 		// store front/archive item count
-		$wp_customize->add_setting( 'presentation_store_front_count', array( 'default' => 9 ) );		
+		$wp_customize->add_setting( 'presentation_store_front_count', array( 
+			'default' => 9,
+			'sanitize_callback' => 'presentation_sanitize_integer'
+		) );		
 		$wp_customize->add_control( 'presentation_store_front_count', array(
 		    'label' 	=> __( 'Store Front Item Count', 'presentation' ),
 		    'section' 	=> 'presentation_edd_options',
@@ -383,6 +386,14 @@ function presentation_sanitize_radio( $input ) {
  */
 function presentation_sanitize_text( $input ) {
     return strip_tags( stripslashes( $input ) );
+}
+
+
+/** ===============
+ * Sanitize integer input
+ */
+function presentation_sanitize_integer( $input ) {
+	return absint( $input );
 }
 
 
