@@ -340,7 +340,7 @@ function presentation_check_license() {
 	$api_params = array( 
 		'edd_action' => 'check_license', 
 		'license' => $license, 
-		'item_name' => urlencode( PRESENTATION_SL_THEME_NAME ) 
+		'item_name' => urlencode( PRESENTATION_DOWNLOAD_TITLE ) 
 	);
 
 	$response = wp_remote_get( add_query_arg( $api_params, PRESENTATION_SL_STORE_URL ), array( 'timeout' => 15, 'sslverify' => false ) );
