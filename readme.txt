@@ -83,6 +83,12 @@ Copyright: Dave Gandy, http://fontawesome.io
 
 == Changelog ==
 
+= 1.1.3 =
+* Tweaked: user input sanitization for store front item count
+* Tweaked: show search query in search field on search results page
+* Tweaked: sidebar product info HTML markup on single downloads
+* Fixed: only show posts in regular search results
+
 = 1.1.2 =
 * Added: custom menu fallback for both theme menus
 * Added: theme and additional resource copyright 
@@ -93,10 +99,10 @@ Copyright: Dave Gandy, http://fontawesome.io
 * Fixed: inaccurate text domain
 
 = 1.1.1 =
-* Tweak: user input sanitization for theme customizer options
+* Tweaked: user input sanitization for theme customizer options
 
 = 1.1.0 =
-* New: full support for bbPress
+* Added: full support for bbPress
 
 = 1.0.0 =
 * first stable version
