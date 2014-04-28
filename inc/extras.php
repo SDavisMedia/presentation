@@ -41,18 +41,6 @@ function presentation_social_profiles() {
 add_action( 'presentation_social_profiles', 'presentation_social_profiles' ); 
 
 /**
- * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
- *
- * @param array $args Configuration arguments.
- * @return array
- */
-function presentation_page_menu_args( $args ) {
-	$args['show_home'] = true;
-	return $args;
-}
-add_filter( 'wp_page_menu_args', 'presentation_page_menu_args' );
-
-/**
  * Adds custom classes to the array of body classes.
  *
  * @param array $classes Classes for the body element.
