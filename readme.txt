@@ -83,6 +83,10 @@ Copyright: Dave Gandy, http://fontawesome.io
 
 == Changelog ==
 
+= 1.1.4 =
+* Tweaked: cleaner translation strings
+* added: new langauge files (updated after translation string tweaks)
+
 = 1.1.3 =
 * Tweaked: user input sanitization for store front item count
 * Tweaked: show search query in search field on search results page
