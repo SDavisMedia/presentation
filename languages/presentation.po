@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Presentation\n"
-"POT-Creation-Date: 2014-05-23 17:43-0600\n"
-"PO-Revision-Date: 2014-05-23 17:43-0600\n"
+"POT-Creation-Date: 2014-05-23 18:05-0600\n"
+"PO-Revision-Date: 2014-05-23 18:05-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -127,6 +127,18 @@ msgstr ""
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
+msgstr ""
+
+#: comments.php:100
+msgid "Name"
+msgstr ""
+
+#: comments.php:102
+msgid "Email"
+msgstr ""
+
+#: comments.php:104
+msgid "Website URL"
 msgstr ""
 
 #: content/content-none.php:9
