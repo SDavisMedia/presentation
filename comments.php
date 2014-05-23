@@ -23,8 +23,8 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 		<h3 class="comments-title">
 			<?php
-				printf( _nx( 'One response to <span class="response-title">%2$s</span>', '%1$s responses to <span class="response-title">%2$s</span>', get_comments_number(), 'comments title', 'presentation' ),
-					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+				printf( _nx( 'One response to %2$s', '%1$s responses to %2$s', get_comments_number(), 'comments title', 'presentation' ),
+					number_format_i18n( get_comments_number() ), '<span class="response-title">' . get_the_title() . '</span>' );
 			?>
 		</h3>
 

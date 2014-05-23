@@ -22,11 +22,11 @@ function presentation_paging_nav() {
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<i class="fa fa-arrow-circle-left"></i>Older posts', 'presentation' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( sprintf( __( '%sOlder posts', 'presentation' ), '<i class="fa fa-arrow-circle-left"></i>' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts<i class="fa fa-arrow-circle-right"></i>', 'presentation' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( sprintf( __( 'Newer posts%s', 'presentation' ), '<i class="fa fa-arrow-circle-right"></i>' ) ); ?></div>
 			<?php endif; ?>
 
 		</div>
@@ -54,8 +54,8 @@ function presentation_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'presentation' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<i class="fa fa-arrow-circle-left"></i>%title', 'Previous post link', 'presentation' ) );
-				next_post_link( '<div class="nav-next">%link</div>', _x( '%title <i class="fa fa-arrow-circle-right"></i>', 'Next post link', 'presentation' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', '<i class="fa fa-arrow-circle-left"></i>' . _x( '%title', 'Previous post link', 'presentation' ) );
+				next_post_link( '<div class="nav-next">%link</div>', _x( '%title ', 'Next post link', 'presentation' ) . '<i class="fa fa-arrow-circle-right"></i>' );
 			?>
 		</div>
 	</nav>

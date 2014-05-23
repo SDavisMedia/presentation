@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Presentation\n"
-"POT-Creation-Date: 2014-04-20 20:26-0600\n"
-"PO-Revision-Date: 2014-04-20 20:26-0600\n"
+"POT-Creation-Date: 2014-05-23 17:43-0600\n"
+"PO-Revision-Date: 2014-05-23 17:43-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -18,13 +18,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:13 content/content-download-taxonomy.php:67
-#: content/content-store-front.php:77
+#: 404.php:13 content/content-download-taxonomy.php:69
+#: content/content-store-front.php:79
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: 404.php:17 content/content-download-taxonomy.php:68
-#: content/content-store-front.php:78
+#: 404.php:17 content/content-download-taxonomy.php:70
+#: content/content-store-front.php:80
 msgid ""
 "It looks like nothing was found at this location. Try using the search form "
 "below."
@@ -79,8 +79,8 @@ msgstr ""
 #: comments.php:26
 #, php-format
 msgctxt "comments title"
-msgid "One response to <span class=\"response-title\">%2$s</span>"
-msgid_plural "%1$s responses to <span class=\"response-title\">%2$s</span>"
+msgid "One response to %2$s"
+msgid_plural "%1$s responses to %2$s"
 msgstr[0] ""
 msgstr[1] ""
 
@@ -166,34 +166,52 @@ msgid "written by "
 msgstr ""
 
 #: footer.php:18
-msgid "Built with WordPress & <a href=\""
+#, php-format
+msgid "Built with WordPress & %s"
 msgstr ""
 
-#: functions.php:45
-msgid "Primary Menu"
+#: form-search.php:9
+msgctxt "placeholder"
+msgid "Search Forums&hellip;"
+msgstr ""
+
+#: form-search.php:10
+msgid "Submit"
 msgstr ""
 
 #: functions.php:48
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:49
 msgid "Header Menu (no drop-downs)"
 msgstr ""
 
-#: functions.php:62
+#: functions.php:63
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:70
+#: functions.php:72
 msgid "EDD Sidebar"
 msgstr ""
 
-#: functions.php:156
+#: functions.php:82
+msgid "bbPress Sidebar"
+msgstr ""
+
+#: functions.php:160
+msgid "Home"
+msgstr ""
+
+#: functions.php:183
 msgid "Read More"
 msgstr ""
 
-#: header.php:80
+#: header.php:52
 msgid "Menu"
 msgstr ""
 
-#: header.php:81
+#: header.php:53
 msgid "Skip to content"
 msgstr ""
 
@@ -215,107 +233,121 @@ msgid ""
 "in your child theme stylesheet."
 msgstr ""
 
-#: inc/customizer.php:59
+#: inc/customizer.php:62
 msgid "Choose a color scheme:"
 msgstr ""
 
-#: inc/customizer.php:77
+#: inc/customizer.php:79
 msgid "Content Options"
 msgstr ""
 
-#: inc/customizer.php:78
+#: inc/customizer.php:80
 msgid ""
 "Adjust the display of content on your website. All options have a default "
 "value that can be left as-is but you are free to customize."
 msgstr ""
 
-#: inc/customizer.php:84
+#: inc/customizer.php:89
 msgid "Post Feed Content"
 msgstr ""
 
-#: inc/customizer.php:96
+#: inc/customizer.php:102
 msgid "Read More &rarr;"
 msgstr ""
 
-#: inc/customizer.php:98
+#: inc/customizer.php:106
 msgid "Excerpt & More Link Text"
 msgstr ""
 
-#: inc/customizer.php:106
+#: inc/customizer.php:117
 msgid "Show Featured Images in post listings?"
 msgstr ""
 
-#: inc/customizer.php:114
+#: inc/customizer.php:128
 msgid "Show Featured Images on Single Posts?"
 msgstr ""
 
-#: inc/customizer.php:122
+#: inc/customizer.php:139
 msgid "Show Post Footer on Single Posts?"
 msgstr ""
 
-#: inc/customizer.php:130
+#: inc/customizer.php:150
 msgid "Display Comments on Standard Pages?"
 msgstr ""
 
-#: inc/customizer.php:139
+#: inc/customizer.php:162
 msgid "Footer Credits & Copyright"
 msgstr ""
 
-#: inc/customizer.php:147
+#: inc/customizer.php:173
 msgid "Twitter Profile URL"
 msgstr ""
 
-#: inc/customizer.php:155
+#: inc/customizer.php:184
 msgid "Facebook Profile URL"
 msgstr ""
 
-#: inc/customizer.php:163
+#: inc/customizer.php:195
 msgid "Google Plus Profile URL"
 msgstr ""
 
-#: inc/customizer.php:171
+#: inc/customizer.php:206
 msgid "LinkedIn Profile URL"
 msgstr ""
 
-#: inc/customizer.php:184
+#: inc/customizer.php:219
+msgid "bbPress Options"
+msgstr ""
+
+#: inc/customizer.php:220
+msgid ""
+"These options are specific to all pages that display bbPress forums and its "
+"components."
+msgstr ""
+
+#: inc/customizer.php:229
+msgid "Remove sidebar & display full-width?"
+msgstr ""
+
+#: inc/customizer.php:243
 msgid "Easy Digital Downloads"
 msgstr ""
 
-#: inc/customizer.php:185
+#: inc/customizer.php:244
 msgid ""
 "All other EDD options are under Dashboard => Downloads. If you deactivate "
 "EDD, these options will no longer appear."
 msgstr ""
 
-#: inc/customizer.php:191
+#: inc/customizer.php:253
 msgid "Comments on Downloads?"
 msgstr ""
 
-#: inc/customizer.php:200
+#: inc/customizer.php:265
 msgid "Store Front Main Title"
 msgstr ""
 
-#: inc/customizer.php:208
+#: inc/customizer.php:273
 msgid "Store Front Description"
 msgstr ""
 
-#: inc/customizer.php:216
+#: inc/customizer.php:284
 msgid "Hide Download Description"
 msgstr ""
 
-#: inc/customizer.php:223
+#: inc/customizer.php:292
 msgid "View Details"
 msgstr ""
 
-#: inc/customizer.php:225
+#: inc/customizer.php:296
 msgid "Store Item Link Text"
 msgstr ""
 
-#: inc/customizer.php:233
+#: inc/customizer.php:307
 msgid "Store Front Item Count"
 msgstr ""
 
-#: inc/customizer.php:245
+#: inc/customizer.php:319
 msgid "Navigation Menu(s)"
 msgstr ""
 
@@ -324,11 +356,13 @@ msgid "Posts navigation"
 msgstr ""
 
 #: inc/template-tags.php:25
-msgid "<i class=\"fa fa-arrow-circle-left\"></i>Older posts"
+#, php-format
+msgid "%sOlder posts"
 msgstr ""
 
 #: inc/template-tags.php:29
-msgid "Newer posts<i class=\"fa fa-arrow-circle-right\"></i>"
+#, php-format
+msgid "Newer posts%s"
 msgstr ""
 
 #: inc/template-tags.php:54
@@ -337,12 +371,12 @@ msgstr ""
 
 #: inc/template-tags.php:57
 msgctxt "Previous post link"
-msgid "<i class=\"fa fa-arrow-circle-left\"></i>%title"
+msgid "%title"
 msgstr ""
 
 #: inc/template-tags.php:58
 msgctxt "Next post link"
-msgid "%title <i class=\"fa fa-arrow-circle-right\"></i>"
+msgid "%title "
 msgstr ""
 
 #: inc/template-tags.php:102
@@ -397,11 +431,11 @@ msgid "Search for:"
 msgstr ""
 
 #: sidebar-edd.php:10
-msgid "Starting at:"
+msgid "Starting at: "
 msgstr ""
 
 #: sidebar-edd.php:12
-msgid "Price:"
+msgid "Price: "
 msgstr ""
 
 #: sidebar-edd.php:14
