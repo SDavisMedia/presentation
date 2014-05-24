@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Presentation\n"
-"POT-Creation-Date: 2014-05-23 18:05-0600\n"
-"PO-Revision-Date: 2014-05-23 18:05-0600\n"
+"POT-Creation-Date: 2014-05-23 18:46-0600\n"
+"PO-Revision-Date: 2014-05-23 18:46-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -440,6 +440,10 @@ msgstr ""
 
 #: searchform.php:8
 msgid "Search for:"
+msgstr ""
+
+#: searchform.php:9
+msgid "Search&hellip;"
 msgstr ""
 
 #: sidebar-edd.php:10
