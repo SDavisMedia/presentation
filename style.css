@@ -1107,6 +1107,10 @@ Plugin support
 	margin-bottom: 8px;
 	width: 100%;
 }
+.entry-content div.sharedaddy h3.sd-title:before,
+.entry-summary div.sharedaddy h3.sd-title:before {
+	border-top: none;
+}
 #content .entry-content div.sharedaddy .sd-content,
 #content .entry-summary div.sharedaddy .sd-content {
 	display: block;
