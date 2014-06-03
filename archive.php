@@ -47,10 +47,14 @@ get_header(); ?>
 					?>
 				</h1>
 				<?php
-					// Show an optional term description.
 					$term_description = term_description();
-					if ( ! empty( $term_description ) ) :
-						printf( '<div class="taxonomy-description">%s</div>', $term_description );
+					$tag_description = tag_description();
+					if ( is_author() && '' != get_the_author_meta( 'description' ) ) : // show author user bio if it exists ?>
+						<p class="user-description"><?php echo get_the_author_meta( 'description' ); ?></p>
+						<?php					
+					elseif ( is_category() || is_tag() && ! empty( $tag_description ) ) : ?>
+							<div class="taxonomy-description"><?php echo $term_description; ?></div>
+							<?php
 					endif;
 				?>
 			</header>
