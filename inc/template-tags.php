@@ -20,15 +20,13 @@ function presentation_paging_nav() {
 	<nav class="navigation paging-navigation" role="navigation">
 		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'presentation' ); ?></h1>
 		<div class="nav-links">
-
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( sprintf( __( '%sOlder posts', 'presentation' ), '<i class="fa fa-arrow-circle-left"></i>' ) ); ?></div>
+				<div class="nav-previous"><?php next_posts_link( sprintf( __( '%sOlder posts', 'presentation' ), '<i class="fa fa-arrow-circle-left"></i>' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( sprintf( __( 'Newer posts%s', 'presentation' ), '<i class="fa fa-arrow-circle-right"></i>' ) ); ?></div>
+				<div class="nav-next"><?php previous_posts_link( sprintf( __( 'Newer posts%s', 'presentation' ), '<i class="fa fa-arrow-circle-right"></i>' ) ); ?></div>
 			<?php endif; ?>
-
 		</div>
 	</nav>
 	<?php
@@ -83,19 +81,19 @@ function presentation_posted_on() {
 	<span class="byline">
 		<i class="fa fa-pencil"></i>
 		<?php
-		printf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_html( get_the_author() )
-		);
+			printf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
+				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+				esc_html( get_the_author() )
+			);
 		?>
 	</span>
 	<span class="posted-on">
 		<i class="fa fa-calendar"></i>
 		<?php
-		printf( '<a href="%1$s" rel="bookmark">%2$s</a>',
-			esc_url( get_permalink() ),
-			$time_string
-		);
+			printf( '<a href="%1$s" rel="bookmark">%2$s</a>',
+				esc_url( get_permalink() ),
+				$time_string
+			);
 		?>
 	</span>
 	<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
@@ -108,7 +106,7 @@ endif;
  * Returns true if a blog has more than 1 category.
  */
 function presentation_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
+	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) :
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'hide_empty' => 1,
@@ -118,15 +116,15 @@ function presentation_categorized_blog() {
 		$all_the_cool_cats = count( $all_the_cool_cats );
 
 		set_transient( 'all_the_cool_cats', $all_the_cool_cats );
-	}
+	endif;
 
-	if ( '1' != $all_the_cool_cats ) {
+	if ( '1' != $all_the_cool_cats ) :
 		// This blog has more than 1 category so presentation_categorized_blog should return true.
 		return true;
-	} else {
+	else :
 		// This blog has only 1 category so presentation_categorized_blog should return false.
 		return false;
-	}
+	endif;
 }
 
 /**
