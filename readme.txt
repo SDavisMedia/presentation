@@ -83,6 +83,11 @@ Copyright: Dave Gandy, http://fontawesome.io
 
 == Changelog ==
 
+= 1.1.5 =
+* Tweaked: sharing module styles to account for new Jatpack
+* added: wp_title filter to better control title tag output on all site pages
+* added: user bio displays below name on author archive page
+
 = 1.1.4 =
 * Tweaked: cleaner translation strings
 * added: new langauge files (updated after translation string tweaks)
