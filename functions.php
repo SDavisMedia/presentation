@@ -7,7 +7,7 @@
  * definitions
  */
 define( 'PRESENTATION_NAME', 'Presentation' );
-define( 'PRESENTATION_VERSION', '1.1.5' );
+define( 'PRESENTATION_VERSION', '1.1.6' );
 define( 'PRESENTATION_AUTHOR', 'Sean Davis' );
 define( 'PRESENTATION_HOME', 'http://buildwpyourself.com/downloads/presentation/' );
 
