@@ -11,7 +11,6 @@ $ping = get_bloginfo('pingback_url');
 <head>
 	<meta charset="<?php echo $char; ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php echo $ping; ?>">
 	<?php wp_head(); ?>
@@ -51,7 +50,7 @@ $ping = get_bloginfo('pingback_url');
 				<nav id="site-navigation" class="main-navigation clear" role="navigation">
 					<span class="menu-toggle"><?php echo '<i class="fa fa-bars"></i> ' . __( 'Menu', 'presentation' ); ?></span>
 					<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'presentation' ); ?></a>
-		
+
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => 'presentation_menu_home' ) ); ?>
 				</nav>
 			</div>
