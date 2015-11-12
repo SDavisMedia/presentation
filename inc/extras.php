@@ -2,15 +2,15 @@
 /**
  * Custom functions that act independently of the theme templates
  */
- 
+
 /**
  * social profiles
  */
-function presentation_social_profiles() { 
+function presentation_social_profiles() {
 	if ( get_theme_mod( 'presentation_twitter' ) || get_theme_mod( 'presentation_facebook' ) || get_theme_mod( 'presentation_gplus' ) || get_theme_mod( 'presentation_linkedin' ) ) : ?>
 		<div class="social-links">
 			<?php
-			$social_profiles = array( 
+			$social_profiles = array(
 				'twitter'	=> array(
 					'icon' 		=> '<i class="fa fa-twitter-square"></i>',
 					'option'	=> esc_url( get_theme_mod( 'presentation_twitter' ) )
@@ -30,15 +30,15 @@ function presentation_social_profiles() {
 			);
 			foreach ( $social_profiles as $profile ) {
 				if ( '' != $profile[ 'option' ] ) :
-					echo '<a href="', $profile[ 'option' ], '">', $profile[ 'icon' ], '</a>'; 
+					echo '<a href="', $profile[ 'option' ], '">', $profile[ 'icon' ], '</a>';
 				endif;
 			}
 			?>
 		</div>
-	<?php 
+	<?php
 	endif; // end check for any social profile
 }
-add_action( 'presentation_social_profiles', 'presentation_social_profiles' ); 
+add_action( 'presentation_social_profiles', 'presentation_social_profiles' );
 
 /**
  * Adds custom classes to the array of body classes.
@@ -51,21 +51,21 @@ function presentation_body_classes( $classes ) {
 	if ( is_multi_author() ) :
 		$classes[] = 'group-blog';
 	endif;
-	
-	if ( is_page_template( 'edd_templates/edd-store-front.php' ) ) :		
+
+	if ( is_page_template( 'edd_templates/edd-store-front.php' ) ) :
 		$classes[] = 'edd-store-front-template';
-	elseif ( is_page_template( 'edd_templates/edd-checkout.php' ) ) :		
-		$classes[] = 'edd-checkout-template';	
-	elseif ( is_page_template( 'edd_templates/edd-confirmation.php' ) ) :		
+	elseif ( is_page_template( 'edd_templates/edd-checkout.php' ) ) :
+		$classes[] = 'edd-checkout-template';
+	elseif ( is_page_template( 'edd_templates/edd-confirmation.php' ) ) :
 		$classes[] = 'edd-confirmation-template';
-	elseif ( is_page_template( 'edd_templates/edd-history.php' ) ) :		
+	elseif ( is_page_template( 'edd_templates/edd-history.php' ) ) :
 		$classes[] = 'edd-history-template';
-	elseif ( is_page_template( 'edd_templates/edd-members.php' ) ) :		
+	elseif ( is_page_template( 'edd_templates/edd-members.php' ) ) :
 		$classes[] = 'edd-members-template';
-	elseif ( is_page_template( 'edd_templates/edd-failed.php' ) ) :		
+	elseif ( is_page_template( 'edd_templates/edd-failed.php' ) ) :
 		$classes[] = 'edd-failed-template';
 	endif;
-	
+
 	if ( class_exists( 'bbPress' ) && is_bbpress() && 1 == get_theme_mod( 'presentation_bbpress_full_width' ) ) :
 		$classes[] = 'no-sidebar';
 	endif;
@@ -75,36 +75,19 @@ function presentation_body_classes( $classes ) {
 add_filter( 'body_class', 'presentation_body_classes' );
 
 /**
- * Filters wp_title to print a neat <title> tag based on what is being viewed.
+ * Render document title for backwards compatibility
  *
- * @param string $title Default title text for current view.
- * @param string $sep Optional separator.
- * @return string The filtered title.
+ * @resource https://make.wordpress.org/core/2015/10/20/document-title-in-4-4/
+ * @since 1.1.6
  */
-function presentation_wp_title( $title, $sep ) {
-	if ( is_feed() ) {
-		return $title;
+if ( ! function_exists( '_wp_render_title_tag' ) ) {
+	function presentation_render_title() {
+		?>
+		<title><?php wp_title( '|', true, 'right' ); ?></title>
+		<?php
 	}
-
-	global $page, $paged;
-
-	// Add the blog name
-	$title .= get_bloginfo( 'name', 'display' );
-
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) ) {
-		$title .= " $sep $site_description";
-	}
-
-	// Add a page number if necessary:
-	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-		$title .= " $sep " . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
-	}
-
-	return $title;
+	add_action( 'wp_head', 'presentation_render_title' );
 }
-add_filter( 'wp_title', 'presentation_wp_title', 10, 2 );
 
 /**
  * Sets the authordata global when viewing an author archive.

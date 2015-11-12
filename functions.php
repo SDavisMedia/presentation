@@ -51,6 +51,9 @@ function presentation_setup() {
 
 	// Enable support for HTML5 markup.
 	add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', ) );
+
+	// add title tag support
+	add_theme_support( 'title-tag' );
 }
 endif; // presentation_setup
 add_action( 'after_setup_theme', 'presentation_setup' );
