@@ -154,14 +154,14 @@ function presentation_customize_register( $wp_customize ) {
 	// credits & copyright
 	$wp_customize->add_setting( 'presentation_credits_copyright', array(
 		'default' => null,
-		'sanitize_callback' => 'presentation_sanitize_text'
+		'sanitize_callback' => 'presentation_sanitize_textarea_lite'
 	) );
-	$wp_customize->add_control( 'presentation_credits_copyright', array(
+	$wp_customize->add_control( new presentation_customize_textarea_control( $wp_customize, 'presentation_credits_copyright', array(
 		'label'		=> __( 'Footer Credits & Copyright', 'presentation' ),
 		'section'	=> 'presentation_content_section',
 		'settings'	=> 'presentation_credits_copyright',
 		'priority'	=> 70,
-	) );
+	) ) );
 	// twitter url
 	$wp_customize->add_setting( 'presentation_twitter', array(
 		'default' => null,
@@ -265,7 +265,10 @@ function presentation_customize_register( $wp_customize ) {
 			'priority'	=> 20,
 		) );
 		// store front/downloads archive description
-		$wp_customize->add_setting( 'presentation_edd_store_archives_description', array( 'default' => null ) );
+		$wp_customize->add_setting( 'presentation_edd_store_archives_description', array(
+			'default' => null,
+			'sanitize_callback' => 'presentation_sanitize_textarea'
+		) );
 		$wp_customize->add_control( new presentation_customize_textarea_control( $wp_customize, 'presentation_edd_store_archives_description', array(
 			'label'		=> __( 'Store Front Description', 'presentation' ),
 			'section'	=> 'presentation_edd_options',
@@ -315,6 +318,103 @@ function presentation_customize_register( $wp_customize ) {
 	$wp_customize->get_section( 'static_front_page' )->priority = 50;
 }
 add_action( 'customize_register', 'presentation_customize_register' );
+
+
+/**
+ * Sanitize textarea
+ */
+function presentation_sanitize_textarea( $input ) {
+	$allowed = array(
+		's'         => array(),
+		'br'        => array(),
+		'em'        => array(),
+		'i'         => array(),
+		'strong'    => array(),
+		'b'         => array(),
+		'a'         => array(
+			'href'          => array(),
+			'title'         => array(),
+			'class'         => array(),
+			'id'            => array(),
+			'style'         => array(),
+			'target'        => array(),
+		),
+		'form'      => array(
+			'id'            => array(),
+			'class'         => array(),
+			'action'        => array(),
+			'method'        => array(),
+			'autocomplete'  => array(),
+			'style'         => array(),
+		),
+		'input'     => array(
+			'type'          => array(),
+			'name'          => array(),
+			'class'         => array(),
+			'id'            => array(),
+			'value'         => array(),
+			'placeholder'   => array(),
+			'tabindex'      => array(),
+			'style'         => array(),
+		),
+		'img'       => array(
+			'src'           => array(),
+			'alt'           => array(),
+			'class'         => array(),
+			'id'            => array(),
+			'style'         => array(),
+			'height'        => array(),
+			'width'         => array(),
+		),
+		'span'      => array(
+			'class'         => array(),
+			'id'            => array(),
+			'style'         => array(),
+		),
+		'p'         => array(
+			'class'         => array(),
+			'id'            => array(),
+			'style'         => array(),
+		),
+		'div'       => array(
+			'class'         => array(),
+			'id'            => array(),
+			'style'         => array(),
+		),
+		'blockquote' => array(
+			'cite'          => array(),
+			'class'         => array(),
+			'id'            => array(),
+			'style'         => array(),
+		),
+	);
+	return wp_kses( $input, $allowed );
+}
+
+
+/**
+ * Sanitize textarea lite
+ */
+function presentation_sanitize_textarea_lite( $input ) {
+	$allowed = array(
+		'em'        => array(),
+		'strong'    => array(),
+		'a'         => array(
+			'href'          => array(),
+			'title'         => array(),
+			'class'         => array(),
+			'id'            => array(),
+			'style'         => array(),
+			'target'        => array(),
+		),
+		'span'      => array(
+			'class'         => array(),
+			'id'            => array(),
+			'style'         => array(),
+		),
+	);
+	return wp_kses( $input, $allowed );
+}
 
 
 /** ===============
@@ -373,6 +473,14 @@ function presentation_sanitize_radio( $input ) {
  */
 function presentation_sanitize_text( $input ) {
     return strip_tags( stripslashes( $input ) );
+}
+
+
+/** ===============
+ * Sanitize text input - allow links
+ */
+function presentation_sanitize_link_text( $input ) {
+	return strip_tags( stripslashes( $input ), '<a>' );
 }
 
 
