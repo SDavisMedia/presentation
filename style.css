@@ -5,11 +5,11 @@ Author: Sean Davis
 Author URI: http://seandavis.co
 Description: A clean and simple theme designed with minimal distractions to make your content the most important element on any given page. Social networking links are easily implemented along with two appropriately styled nav menus. A post footer is built automagically based on your user information and theme customizer settings. Full support for bbPress and Easy Digital Downloads takes your site to the next level.
 Version: 1.1.5
-License: GNU General Public License v2.0 
+License: GNU General Public License v2.0
 License URI: license.txt
 Text Domain: presentation
 Domain Path: /languages/
-Tags: 
+Tags:
 */
 
 
@@ -82,7 +82,7 @@ blockquote, q {
 a img {
 	border: 0;
 }
-		
+
 
 /*--------------------------------------------------------------
 Structure
@@ -124,9 +124,9 @@ textarea {
 h1, h2, h3, h4, h5, h6,
 .site-title {
 	clear: both;
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-weight: 300;
-	line-height: 1.6em;
+	line-height: 1.4;
 	margin-bottom: .4em;
 }
 h1, h2 {
@@ -820,8 +820,8 @@ Easy Digital Downloads
 #secondary .edd_download_purchase_form .edd_price_options {
 	margin-bottom: 24px;
 }
-#edd-purchase-button, 
-.edd-submit, 
+#edd-purchase-button,
+.edd-submit,
 input[type=submit].edd-submit {
 	font-size: 16px;
 	border: none;
@@ -896,43 +896,43 @@ input[type=submit].edd-submit {
 	max-width: 700px;
 	min-height: 268px
 }
-#edd_user_history td, 
+#edd_user_history td,
 #edd_user_history th {
 	padding: 10px;
 }
 #edd_purchase_receipt,
-#edd_user_history { 
-	margin-bottom: 2em; 
+#edd_user_history {
+	margin-bottom: 2em;
 }
-.edd-confirmation-template .entry-content #edd_purchase_receipt thead th:first-child, 
-.edd-confirmation-template .entry-content #edd_purchase_receipt tbody td:first-child { 
-	padding: 15px 10px; 
-	border-width: 0 1px 0 0; 
+.edd-confirmation-template .entry-content #edd_purchase_receipt thead th:first-child,
+.edd-confirmation-template .entry-content #edd_purchase_receipt tbody td:first-child {
+	padding: 15px 10px;
+	border-width: 0 1px 0 0;
 }
 .edd-confirmation-template .entry-content #edd_purchase_receipt thead th:first-child,
 .edd-confirmation-template .entry-content #edd_purchase_receipt tbody tr:not(:last-child) td:first-child {
 	border-bottom-width: 1px;
 }
-.edd-confirmation-template .entry-content #edd_purchase_receipt thead th:last-child, 
-.edd-confirmation-template .entry-content #edd_purchase_receipt tbody td:last-child { 
-	padding: 15px 10px; 
-	border-width: 0 0 1px; 
+.edd-confirmation-template .entry-content #edd_purchase_receipt thead th:last-child,
+.edd-confirmation-template .entry-content #edd_purchase_receipt tbody td:last-child {
+	padding: 15px 10px;
+	border-width: 0 0 1px;
 }
 .edd-confirmation-template .entry-content #edd_purchase_receipt tbody tr:last-child td:last-child {
 	border-bottom-width: 0;
 }
-#edd_purchase_receipt_products { 
-	margin-bottom: 3em; 
+#edd_purchase_receipt_products {
+	margin-bottom: 3em;
 }
-#edd_purchase_receipt_products th { 
-	font-weight: bold; 
-	padding: 15px 10px; 
+#edd_purchase_receipt_products th {
+	font-weight: bold;
+	padding: 15px 10px;
 }
-.entry-content #edd_purchase_receipt_products tbody td { 
-	border-width: 0 0 1px; 
+.entry-content #edd_purchase_receipt_products tbody td {
+	border-width: 0 0 1px;
 }
-#edd_purchase_receipt_products td { 
-	padding: 15px 10px; 
+#edd_purchase_receipt_products td {
+	padding: 15px 10px;
 }
 #edd_profile_editor_form {
 	padding: 16px;
@@ -943,7 +943,7 @@ input[type=submit].edd-submit {
 	margin-bottom: 10px;
 }
 #edd_profile_editor_form p > input:not([type="submit"]),
-#edd_profile_editor_form p > select, 
+#edd_profile_editor_form p > select,
 #edd_profile_editor_form p {
 	margin-bottom: 1em;
 }
@@ -980,10 +980,10 @@ bbPress
 	width: 100%;
 	max-width: 900px;
 }
-.entry-content #bbpress-forums ul.bbp-lead-topic, 
-.entry-content #bbpress-forums ul.bbp-topics, 
-.entry-content #bbpress-forums ul.bbp-forums, 
-.entry-content #bbpress-forums ul.bbp-replies, 
+.entry-content #bbpress-forums ul.bbp-lead-topic,
+.entry-content #bbpress-forums ul.bbp-topics,
+.entry-content #bbpress-forums ul.bbp-forums,
+.entry-content #bbpress-forums ul.bbp-replies,
 .entry-content #bbpress-forums ul.bbp-search-results {
 	font-size: 14px;
 }
@@ -993,8 +993,8 @@ bbPress
 #bbpress-forums li.bbp-footer {
 	border-width: 1px 0 0;
 }
-.single-topic #bbpress-forums .bbp-forum-header, 
-.single-topic #bbpress-forums .bbp-topic-header, 
+.single-topic #bbpress-forums .bbp-forum-header,
+.single-topic #bbpress-forums .bbp-topic-header,
 .single-topic #bbpress-forums .bbp-reply-header {
 	border-top: 0;
 }
